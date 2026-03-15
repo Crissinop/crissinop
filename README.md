@@ -17,7 +17,7 @@ projects.js         ← 12 project entries (cat/img/title/desc/url)
 README.md
 ```
 
-## Deploy (30 seconds)
+## Deploy
 
 ### Vercel
 ```bash
