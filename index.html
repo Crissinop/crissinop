@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cris Del Ninno — Bologna-based IAM Engineer, Web Developer & VFX Creator. Video · AI · VFX · Motion">
+  <meta property="og:title" content="Cris Del Ninno — Video · AI · VFX · Motion">
+  <meta property="og:description" content="Bologna-based IAM Engineer, Web Developer & VFX Creator.">
+  <meta name="theme-color" content="#080808">
+  <title>Cris Del Ninno — Video · AI · VFX · Motion</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+  <!-- GSAP (preloaded) -->
+  <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js">
+  <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { neon: '#00d4ff' },
+          fontFamily: {
+            display: ['Space Grotesk', 'sans-serif'],
+            mono: ['DM Mono', 'monospace'],
+          },
+          boxShadow: {
+            neon: '0 0 20px rgba(0,212,255,0.6), 0 0 40px rgba(0,212,255,0.3)',
+            'neon-sm': '0 0 10px rgba(0,212,255,0.5), 0 0 20px rgba(0,212,255,0.2)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style-custom.css">
+
+  <!-- Icons (inline SVG icons used instead of CDN for performance) -->
+</head>
+<body class="bg-[#080808] text-white antialiased">
+
+  <!-- Custom Cursor -->
+  <div id="cursor" aria-hidden="true"></div>
+  <div id="cursor-trail" aria-hidden="true"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="#" class="nav-logo">CRIS<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="hero" aria-label="Hero section">
+    <div class="hero-bg-glow"></div>
+    <div class="hero-grid"></div>
+
+    <p class="hero-eyebrow relative z-10">Bologna, Italia · 2026</p>
+
+    <h1 class="hero-name relative z-10">
+      CRIS<br><em>DEL NINNO</em>
+    </h1>
+
+    <div class="hero-pills relative z-10" role="list" aria-label="Specializations">
+      <span class="hero-pill" role="listitem">Video</span>
+      <span class="hero-pill" role="listitem">AI</span>
+      <span class="hero-pill" role="listitem">VFX</span>
+      <span class="hero-pill" role="listitem">Motion</span>
+    </div>
+
+    <a href="#work" class="explore-btn relative z-10" aria-label="Explore my work">Explore ↓</a>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ===================== WORK ===================== -->
+  <main id="work" aria-label="Portfolio projects">
+    <p class="section-label">Selected Work</p>
+    <h2 class="section-title">Projects.</h2>
+
+    <!-- Filter bar -->
+    <div class="filter-bar" role="group" aria-label="Filter projects by category">
+      <button class="filter-btn active" data-filter="ALL" aria-pressed="true"><span>All</span></button>
+      <button class="filter-btn" data-filter="VIDEO" aria-pressed="false"><span>Video</span></button>
+      <button class="filter-btn" data-filter="AI" aria-pressed="false"><span>AI</span></button>
+      <button class="filter-btn" data-filter="VFX" aria-pressed="false"><span>VFX</span></button>
+      <button class="filter-btn" data-filter="MOTION" aria-pressed="false"><span>Motion</span></button>
+    </div>
+
+    <!-- Projects grid (populated by JS) -->
+    <div class="projects-grid" id="projects-grid" aria-live="polite" aria-label="Projects grid">
+    </div>
+  </main>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" aria-label="About me">
+    <div class="about-left">
+      <p class="section-label">About</p>
+      <h2 class="about-name">IAM<br>Engineer<br><em>&amp; Creator</em></h2>
+      <p class="about-bio">
+        <strong>Bologna-based</strong> professional at the intersection of technology and visual storytelling.
+        I build <strong>identity &amp; access management systems</strong> by day and craft
+        <strong>cinematic visuals, AI experiences, and VFX-driven content</strong> by night.
+        Currently working with Okta IAM systems while developing creative projects with
+        DaVinci Resolve, Stable Diffusion, and modern web tools.
+      </p>
+      <div class="about-tags">
+        <span class="about-tag">Okta IAM</span>
+        <span class="about-tag">Web Dev</span>
+        <span class="about-tag">DaVinci Resolve</span>
+        <span class="about-tag">Stable Diffusion</span>
+        <span class="about-tag">GSAP</span>
+        <span class="about-tag">After Effects</span>
+        <span class="about-tag">Node.js</span>
+        <span class="about-tag">Three.js</span>
+      </div>
+    </div>
+
+    <div class="about-right">
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-num" data-count="12" data-suffix="+">0+</div>
+          <div class="stat-label">Projects<br>Completed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-count="5" data-suffix="y">0y</div>
+          <div class="stat-label">Years of<br>Experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-count="4" data-suffix="">0</div>
+          <div class="stat-label">Creative<br>Disciplines</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-count="100" data-suffix="%">0%</div>
+          <div class="stat-label">Passion<br>Level</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" aria-label="Contact">
+    <h2 class="contact-title">Let's create<br>something.</h2>
+    <p class="contact-sub">Available for freelance, collabs &amp; creative projects.</p>
+
+    <a href="mailto:cris@delninno.com" class="contact-email">cris@delninno.com</a>
+
+    <div class="social-links" role="list" aria-label="Social links">
+      <!-- Instagram -->
+      <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer"
+         class="social-link" aria-label="Instagram" role="listitem">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+        </svg>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer"
+         class="social-link" aria-label="LinkedIn" role="listitem">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+      </a>
+      <!-- GitHub -->
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer"
+         class="social-link" aria-label="GitHub" role="listitem">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+        </svg>
+      </a>
+    </div>
+
+    <p class="footer-copy">
+      © 2026 <span>Cris Del Ninno</span> · Crafted in Bologna · All rights reserved
+    </p>
+  </section>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="projects.js"></script>
+  <script src="gsap-animations.js"></script>
+
+  <script>
+    // ---- Navbar scroll state ----
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // ---- Render Projects ----
+    function renderProjects(list) {
+      const grid = document.getElementById('projects-grid');
+      grid.innerHTML = list.map(p => `
+        <article class="project-card" data-cat="${p.cat}" aria-label="${p.title}">
+          <img
+            class="project-img"
+            src="${p.img}"
+            alt="${p.title} — ${p.desc}"
+            loading="lazy"
+            decoding="async"
+          >
+          <span class="project-tag" aria-hidden="true">${p.cat}</span>
+          <div class="project-overlay">
+            <p class="project-cat">${p.cat}</p>
+            <h3 class="project-title">${p.title}</h3>
+            <p class="project-desc">${p.desc}</p>
+            <a href="${p.url}" class="project-link" aria-label="View ${p.title}">
+              View project
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    // Initial render
+    renderProjects(projects);
+
+    // ---- Init everything ----
+    document.addEventListener('DOMContentLoaded', () => {
+      initCursor();
+      initAnimations();
+      initFilters();
+
+      // Update ARIA pressed states on filter click
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-btn').forEach(b => b.setAttribute('aria-pressed', 'false'));
+          btn.setAttribute('aria-pressed', 'true');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
