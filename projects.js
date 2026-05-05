@@ -20,7 +20,15 @@ const projects = [
     cat: 'APPS',
     img: 'media/images/margin.png',
     title: 'Margin App',
-    desc: 'Application for margin calculation and analysis',
+    desc: 'App for daily tasks and to-do management',
+    url: '#'
+  },
+  {
+    id: 4,
+    cat: 'APPS',
+    img: 'media/images/NBE.png',
+    title: 'Neon Breach Echoes',
+    desc: '2D/3D action game with weapon-based entity combat across multiple worlds and levels',
     url: '#'
   }
 ];
