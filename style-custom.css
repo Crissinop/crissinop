@@ -65,7 +65,54 @@ body:has(button:hover) #cursor-trail {
   width: 56px; height: 56px;
   border-color: var(--neon);
 }
-a, button { cursor: none; }
+
+/* ---- Force `cursor: none` on all interactive elements and their descendants
+        (covers <button><span>, <a><svg>, ::before/::after overlays, etc.)
+        Without this, native browser cursors leak through on child nodes
+        and pseudo-elements that have their own implicit cursor.            */
+a, a *,
+button, button *,
+[role="button"], [role="button"] *,
+input, select, textarea, label,
+.hero-pill, .filter-btn, .project-card, .social-link {
+  cursor: none !important;
+}
+
+/* ---- Disable text selection globally on UI/decorative elements only.
+        Body text (bio, descriptions, email) remains selectable.           */
+body,
+#navbar, .nav-logo, .nav-links,
+.hero-eyebrow, .hero-name, .hero-pills, .hero-pill, .explore-btn, .scroll-hint,
+.section-label, .section-title,
+.filter-bar, .filter-btn,
+.project-tag, .project-cat, .project-link,
+.about-name, .about-tags, .about-tag,
+.about-stats, .stat-card, .stat-num, .stat-label,
+.contact-title, .contact-sub,
+.social-links, .social-link,
+.footer-copy {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ---- Re-enable selection for content the user might legitimately copy. */
+.about-bio, .about-bio *,
+.contact-email,
+.project-title, .project-desc {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* ---- Disable image dragging across the board (UX hardening).            */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: auto;
+}
 
 /* ---- Noise Texture Overlay ---- */
 body::before {
@@ -617,8 +664,14 @@ body::before {
   .scroll-line { animation: none; }
   .explore-btn { animation: none; }
   #cursor, #cursor-trail { display: none; }
-  body { cursor: auto; }
-  a, button { cursor: pointer; }
+  body { cursor: auto !important; }
+  a, a *,
+  button, button *,
+  [role="button"], [role="button"] *,
+  input, select, textarea, label,
+  .hero-pill, .filter-btn, .project-card, .social-link {
+    cursor: pointer !important;
+  }
 }
 
 /* ---- Mobile Nav ---- */
