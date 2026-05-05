@@ -207,6 +207,12 @@
       navbar.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
 
+    // ---- Disable right-click context menu globally ----
+    // Note: this is a UX/aesthetic choice (preserves the custom cursor look),
+    // NOT a content protection mechanism — DevTools, view-source, and any
+    // HTTP client can still access every asset on this page.
+    document.addEventListener('contextmenu', (e) => e.preventDefault());
+
     // ---- Render Projects ----
     function renderProjects(list) {
       const grid = document.getElementById('projects-grid');
