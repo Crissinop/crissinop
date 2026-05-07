@@ -2,10 +2,10 @@ const projects = [
   {
     id: 1,
     cat: 'SITES',
-    img: 'media/images/shotbywhosfra.png',
-    title: 'shotbywhosfra.com',
+    img: 'media/images/whosfra.png',
+    title: 'whosfra.com',
     desc: 'Portfolio site for Francesco Aiena — Italian video editor specializing in AI, VFX & motion work',
-    url: 'https://shotbywhosfra.com'
+    url: 'https://whosfra.com'
   },
   {
     id: 2,
