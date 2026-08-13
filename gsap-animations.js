@@ -5,7 +5,14 @@ function initAnimations() {
   gsap.registerPlugin(ScrollTrigger);
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReduced) return;
+  if (prefersReduced) {
+    // Element reveal is handled by the reduced-motion CSS block.
+    // Still set the stat counters to their final values (otherwise they stay "0").
+    document.querySelectorAll('.stat-num[data-count]').forEach(el => {
+      el.textContent = el.dataset.count + (el.dataset.suffix || '');
+    });
+    return;
+  }
 
   // ---- Hero entrance sequence ----
   const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });

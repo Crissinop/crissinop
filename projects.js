@@ -21,7 +21,7 @@ const projects = [
     img: 'media/images/margin.png',
     title: 'Margin App',
     desc: 'App for daily tasks and to-do management',
-    url: '#'
+    url: 'work/margin/index.html'
   },
   {
     id: 4,
@@ -29,6 +29,14 @@ const projects = [
     img: 'media/images/NBE.png',
     title: 'Neon Breach Echoes',
     desc: '2D/3D action game with weapon-based entity combat across multiple worlds and levels',
-    url: '#'
+    url: 'work/neon-breach-echoes/index.html'
+  },
+  {
+    id: 5,
+    cat: 'APPS',
+    img: 'media/images/mnema.png',
+    title: 'Mnema',
+    desc: 'Desktop personal knowledge management app — markdown editor, 2D/3D document graph, LLM integration & versioning',
+    url: 'work/mnema/index.html'
   }
 ];

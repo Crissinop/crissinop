@@ -5,10 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Cris Del Ninno — Italy-based IAM Engineer & Web Developer. Sites · Apps">
+  <meta name="theme-color" content="#080808">
+
+  <!-- Open Graph / Twitter — TODO: confirm your live domain (from CNAME) and replace the base URL. -->
+  <meta property="og:type" content="website">
   <meta property="og:title" content="Cris Del Ninno — Sites · Apps">
   <meta property="og:description" content="Italy-based IAM Engineer & Web Developer.">
-  <meta name="theme-color" content="#080808">
-  <title>Crissinop — Sites · Apps</title>
+  <meta property="og:url" content="https://delninno.com/">
+  <meta property="og:image" content="https://delninno.com/media/images/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cris Del Ninno — Sites · Apps">
+  <meta name="twitter:description" content="Italy-based IAM Engineer & Web Developer.">
+  <meta name="twitter:image" content="https://delninno.com/media/images/og.png">
+  <link rel="canonical" href="https://delninno.com/">
+
+  <!-- Brand: aligned <title> to the og:title. Revert to "Crissinop" if you prefer the handle. -->
+  <title>Cris Del Ninno — Sites · Apps</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,8 +54,20 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style-custom.css">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="media/images/favicon.jpg">
+  <!-- Favicon (MIME type matches the .jpg file) -->
+  <link rel="icon" type="image/jpeg" href="media/images/favicon.jpg">
+
+  <!-- Safety net: many elements start at opacity:0 and are revealed by GSAP.
+       If JS is disabled, reveal everything so the page is never blank. -->
+  <noscript>
+    <style>
+      .hero-eyebrow,.hero-name,.hero-pills,.explore-btn,.scroll-hint,
+      .section-label,.section-title,.filter-bar,.project-card,
+      .about-name,.about-bio,.about-tags,.about-right,
+      .contact-title,.contact-sub,.contact-email,.social-links{opacity:1!important;transform:none!important}
+      #cursor,#cursor-trail{display:none}
+    </style>
+  </noscript>
 
   <!-- Icons (inline SVG icons used instead of CDN for performance) -->
 </head>
@@ -226,22 +250,22 @@
           <img
             class="project-img"
             src="${p.img}"
-            alt="${p.title} — ${p.desc}"
+            alt="${p.title}"
             loading="lazy"
             decoding="async"
           >
           <span class="project-tag" aria-hidden="true">${p.cat}</span>
-          <div class="project-overlay">
-            <p class="project-cat">${p.cat}</p>
+          <div class="project-info">
             <h3 class="project-title">${p.title}</h3>
             <p class="project-desc">${p.desc}</p>
-            <a ${linkAttrs} class="project-link" aria-label="View ${p.title}">
+            <span class="project-cta" aria-hidden="true">
               View project
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
-            </a>
+            </span>
           </div>
+          <a ${linkAttrs} class="card-link" aria-label="View ${p.title}"></a>
         </article>
       `;
       }).join('');

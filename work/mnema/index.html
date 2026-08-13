@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mnema — a desktop personal knowledge management app: markdown editor, 2D/3D document graph, built-in LLM assistance and versioning.">
+  <meta name="theme-color" content="#080808">
+
+  <!-- Open Graph / Twitter -->
+  <!-- TODO: confirm your live domain (from CNAME) and replace the base URL below. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mnema — Personal knowledge management · Cris Del Ninno">
+  <meta property="og:description" content="Desktop PKM app: markdown editor, 2D/3D document graph, LLM integration and versioning.">
+  <meta property="og:url" content="https://delninno.com/work/mnema/">
+  <meta property="og:image" content="https://delninno.com/media/images/mnema.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mnema — Personal knowledge management">
+  <meta name="twitter:description" content="Desktop PKM app: markdown editor, 2D/3D document graph, LLM integration and versioning.">
+  <meta name="twitter:image" content="https://delninno.com/media/images/mnema.png">
+  <link rel="canonical" href="https://delninno.com/work/mnema/">
+
+  <title>Mnema — Cris Del Ninno</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../../style-custom.css">
+  <link rel="stylesheet" href="../../work.css">
+
+  <!-- Favicon (correct MIME type) -->
+  <link rel="icon" type="image/jpeg" href="../../media/images/favicon.jpg">
+</head>
+
+<!-- Per-project accent: Mnema terracotta -->
+<body style="--accent:#d95323; --accent-glow:0 0 20px rgba(217,83,35,.4);">
+
+  <div id="cursor" aria-hidden="true"></div>
+  <div id="cursor-trail" aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="../../index.html" class="nav-logo">CRIS<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="../../index.html#work">Work</a></li>
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="doc">
+    <a href="../../index.html#work" class="doc-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      All work
+    </a>
+
+    <!-- HERO -->
+    <header class="proj-hero">
+      <p class="proj-eyebrow">App · Desktop</p>
+      <h1 class="proj-title">Mnema</h1>
+      <p class="proj-tagline">
+        A desktop <em>personal knowledge management</em> tool: a markdown editor wrapped around a
+        living graph of the links between your documents — in 2D and 3D — with built-in LLM
+        assistance and versioning.
+      </p>
+
+      <div class="proj-meta">
+        <div class="meta-item"><span class="meta-k">Year</span><span class="meta-v">2026</span></div>
+        <div class="meta-item"><span class="meta-k">Role</span><span class="meta-v">Design &amp; Development</span></div>
+        <div class="meta-item"><span class="meta-k">Platform</span><span class="meta-v">Desktop — Tauri 2</span></div>
+        <div class="meta-item"><span class="meta-k">Type</span><span class="meta-v">Personal project</span></div>
+      </div>
+
+      <div class="stack-pills">
+        <span class="stack-pill">Tauri 2</span>
+        <span class="stack-pill">Rust</span>
+        <span class="stack-pill">React 18</span>
+        <span class="stack-pill">TypeScript</span>
+        <span class="stack-pill">SQLite</span>
+        <span class="stack-pill">Three.js</span>
+        <span class="stack-pill">Cytoscape.js</span>
+        <span class="stack-pill">Ollama</span>
+      </div>
+    </header>
+
+    <!-- PRIMARY SHOT -->
+    <figure class="proj-shot">
+      <img src="../../media/projects/mnema/hero.png" alt="Mnema — main interface">
+    </figure>
+
+    <!-- OVERVIEW -->
+    <section class="proj-section">
+      <p class="doc-label">01 — Overview</p>
+      <h2 class="doc-h2">What Mnema is</h2>
+      <p class="doc-p">
+        Mnema is a <strong>desktop application</strong> for personal documentation: a place to write,
+        connect and revisit knowledge. It pairs a markdown editor with a <strong>graph of the links
+        between documents</strong>, rendered both as a 2D map and as a navigable 3D space, and adds
+        an LLM layer and versioning on top.
+      </p>
+      <p class="doc-p">
+        The name comes from ancient Greek <em>μνῆμα</em> (<strong>mnêma</strong>) — "a memorial, that
+        which is remembered." The app is built around that idea: not just storing notes, but keeping
+        the relationships between them visible and alive.
+      </p>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="proj-section">
+      <p class="doc-label">02 — Features</p>
+      <h2 class="doc-h2">What it does</h2>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"/></svg>Markdown editor</h3>
+          <p>Write documentation in markdown with a clean, focused editing surface.</p>
+        </article>
+        <article class="feature-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7 7.5l4 8M17 7.5l-4 8"/></svg>2D &amp; 3D link graph</h3>
+          <p>See the connections between documents as an interactive graph — Cytoscape.js for 2D, a force-directed Three.js scene for 3D.</p>
+        </article>
+        <article class="feature-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>LLM integration</h3>
+          <p>Local models via Ollama, plus external providers: Anthropic (Claude), OpenAI (GPT), Google (Gemini) and any OpenAI-compatible endpoint.</p>
+        </article>
+        <article class="feature-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Local-first storage</h3>
+          <p>Everything lives in a local SQLite database with a custom incremental migration system.</p>
+        </article>
+        <article class="feature-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 15h6"/></svg>PDF extraction</h3>
+          <p>Pulls text out of PDFs with the Rust <code>pdf-extract</code> crate, silencing its ligature noise.</p>
+        </article>
+        <article class="feature-card">
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="9" r="2.5"/><path d="M6 8.5v7M8.5 6H14a3 3 0 0 1 3 3"/></svg>Versioning</h3>
+          <p>Document history is tracked, so you can see how a note evolved over time.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section class="proj-section">
+      <p class="doc-label">03 — Under the hood</p>
+      <h2 class="doc-h2">Technical stack</h2>
+      <div class="stack-table-wrap">
+        <table class="stack-table">
+          <thead><tr><th>Layer</th><th>Technologies</th></tr></thead>
+          <tbody>
+            <tr><td>Runtime / build</td><td>Tauri 2, React 18, TypeScript, Vite, Tokio (<code>rt-multi-thread</code>)</td></tr>
+            <tr><td>UI</td><td>Tailwind CSS, Zustand (state), Lucide icons, custom SVG icons</td></tr>
+            <tr><td>Graph</td><td>Cytoscape.js (2D), <code>3d-force-graph</code> + Three.js (3D)</td></tr>
+            <tr><td>Data</td><td>SQLite with a custom incremental migration system</td></tr>
+            <tr><td>LLM</td><td>Ollama (local) + external providers: Anthropic (Claude), OpenAI (GPT), Google (Gemini), OpenAI-compatible</td></tr>
+            <tr><td>PDF</td><td><code>pdf-extract</code> (Rust) with a <code>StderrSilencer</code> for ligature spam</td></tr>
+            <tr><td>External links</td><td><code>tauri-plugin-opener</code></td></tr>
+            <tr><td>Dev environment</td><td>Windows — launched via <code>npm run tauri:dev</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="proj-section">
+      <p class="doc-label">04 — Gallery</p>
+      <h2 class="doc-h2">Screens</h2>
+      <div class="gallery">
+        <figure class="shot"><img src="../../media/projects/mnema/editor.png" alt="Mnema — markdown editor"><figcaption>Markdown editor</figcaption></figure>
+        <figure class="shot"><img src="../../media/projects/mnema/graph-2d.png" alt="Mnema — 2D knowledge graph"><figcaption>2D knowledge graph</figcaption></figure>
+        <figure class="shot"><img src="../../media/projects/mnema/graph-3d.png" alt="Mnema — 3D knowledge graph"><figcaption>3D knowledge graph</figcaption></figure>
+        <figure class="shot"><img src="../../media/projects/mnema/llm.png" alt="Mnema — LLM assistant"><figcaption>LLM assistant</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- BOTTOM NAV -->
+    <nav class="proj-nav" aria-label="Project navigation">
+      <a href="../../index.html#work" class="prev">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to work
+      </a>
+      <a href="../margin/index.html" class="next">
+        Next: Margin
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </nav>
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close">×</button>
+    <img src="" alt="">
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="../../gsap-animations.js"></script>
+  <script src="../../work.js"></script>
+</body>
+</html>
