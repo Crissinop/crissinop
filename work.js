@@ -29,7 +29,12 @@
   if (lb) {
     var lbImg = lb.querySelector('img');
     function open(src, alt) { lbImg.src = src; lbImg.alt = alt || ''; lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
-    function close() { lb.classList.remove('open'); document.body.style.overflow = ''; lbImg.src = ''; }
+    function close() {
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+      // Clear the src only after the fade-out, so the image doesn't vanish mid-animation.
+      setTimeout(function () { if (!lb.classList.contains('open')) { lbImg.src = ''; lbImg.alt = ''; } }, 300);
+    }
     document.querySelectorAll('.gallery .shot').forEach(function (fig) {
       fig.addEventListener('click', function () {
         if (fig.classList.contains('missing')) return;

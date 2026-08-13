@@ -276,15 +276,33 @@
   position: fixed;
   inset: 0;
   z-index: 2000;
-  display: none;
+  display: flex;                 /* always flex; visibility is driven by opacity/visibility */
   align-items: center;
   justify-content: center;
   padding: 3rem;
   background: rgba(4,4,4,.92);
   backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s var(--ease-out), visibility 0s linear 0.28s;
 }
-.lightbox.open { display: flex; }
-.lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 12px; border: 1px solid var(--border); }
+.lightbox.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.28s var(--ease-out), visibility 0s;
+}
+.lightbox img {
+  max-width: 92vw;
+  max-height: 88vh;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.28s var(--ease-out), transform 0.32s var(--ease-out);
+}
+.lightbox.open img { opacity: 1; transform: scale(1); }
 .lightbox-close {
   position: absolute;
   top: 1.5rem; right: 1.5rem;
