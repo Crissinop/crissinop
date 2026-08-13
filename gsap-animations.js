@@ -82,7 +82,7 @@ function initAnimations() {
   });
 
   // ---- Contact section ----
-  gsap.set(['.contact-title', '.contact-sub', '.contact-email', '.social-links'], {
+  gsap.set(['.contact-title', '.contact-sub', '.social-links'], {
     opacity: 0, y: 25
   });
   ScrollTrigger.create({
@@ -90,7 +90,7 @@ function initAnimations() {
     start: 'top 80%',
     once: true,
     onEnter: () => {
-      gsap.to(['.contact-title', '.contact-sub', '.contact-email', '.social-links'], {
+      gsap.to(['.contact-title', '.contact-sub', '.social-links'], {
         opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: 'power2.out'
       });
     }

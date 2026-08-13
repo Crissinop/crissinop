@@ -478,13 +478,6 @@ body::before {
 }
 .project-cta svg { width: 14px; height: 14px; }
 
-/* Touch devices have no :hover — keep the description (and CTA) visible there
-   so the info isn't permanently unreachable. */
-@media (hover: none) {
-  .project-desc { max-height: 3.4rem; opacity: 1; transform: none; }
-  .project-cta  { max-height: 2rem; margin-top: 0.9rem; opacity: 1; transform: none; }
-}
-
 /* Category tag (top-right) — the single source of the category label. */
 .project-tag {
   position: absolute;
@@ -650,15 +643,15 @@ body::before {
 .contact-email:hover::after { width: 100%; }
 .social-links {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.75rem;
   justify-content: center;
   margin-bottom: 4rem;
   opacity: 0;
 }
 .social-link {
-  width: 48px; height: 48px;
+  width: 56px; height: 56px;
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -667,6 +660,7 @@ body::before {
   transition: all 0.3s var(--ease-out);
   font-size: 1.1rem;
 }
+.social-link svg { width: 22px; height: 22px; }
 .social-link:hover {
   border-color: var(--neon);
   color: var(--neon);
