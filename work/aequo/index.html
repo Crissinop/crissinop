@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aequo — a local-first personal finance app for desktop and mobile. No cloud, no account, no tracking: the data lives in a file you own.">
+  <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="dark">
+
+  <title>Aequo — Crissinop</title>
+  <link rel="canonical" href="https://delninno.com/work/aequo/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Crissinop">
+  <meta property="og:title" content="Aequo — Local-first personal finance">
+  <meta property="og:description" content="Desktop and mobile finance app with no cloud and no account. Encrypted backups, bring-your-own-cloud sync, conflict resolution.">
+  <meta property="og:url" content="https://delninno.com/work/aequo/">
+  <meta property="og:image" content="https://delninno.com/media/images/aequo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aequo — Local-first personal finance">
+  <meta name="twitter:description" content="Desktop and mobile finance app with no cloud and no account.">
+  <meta name="twitter:image" content="https://delninno.com/media/images/aequo.png">
+
+  <link rel="icon" type="image/jpeg" href="../../media/images/favicon.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=DM+Mono:wght@300;400&display=swap">
+
+  <link rel="stylesheet" href="../../style-custom.css">
+  <link rel="stylesheet" href="../../work.css">
+
+  <script>
+    document.documentElement.classList.add('js');
+    setTimeout(function () {
+      if (!document.documentElement.dataset.enhanced) {
+        document.documentElement.classList.remove('js');
+      }
+    }, 2500);
+  </script>
+
+  <script src="../../app.js" defer></script>
+  <script src="../../work.js" defer></script>
+</head>
+
+<!-- Per-project accent: Aequo green, lifted from the brand's deep green so it
+     still reads against #080808 -->
+<body style="--accent:#3fb08a; --accent-soft:rgba(63,176,138,.35);">
+
+  <a class="skip-link" href="#doc">Skip to content</a>
+
+  <div id="cursor" aria-hidden="true"></div>
+
+  <header id="navbar">
+    <a href="../../" class="nav-logo">CRISSINOP<span>.</span></a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="../../#work">Work</a></li>
+        <li><a href="../../#about">About</a></li>
+        <li><a href="../../#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <span class="nav-progress" aria-hidden="true"></span>
+  </header>
+
+  <main class="doc" id="doc">
+    <a href="../../#work" class="doc-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      All work
+    </a>
+
+    <header class="proj-hero">
+      <p class="proj-eyebrow">App · Desktop &amp; Mobile</p>
+      <h1 class="proj-title">Aequo</h1>
+      <p class="proj-tagline">
+        A personal finance app built on one promise that is never traded away:
+        <em>no cloud, no account, no tracking</em>. The data lives in a file on your machine,
+        and you own it.
+      </p>
+
+      <div class="proj-meta">
+        <div class="meta-item"><span class="meta-k">Year</span><span class="meta-v">2026</span></div>
+        <div class="meta-item"><span class="meta-k">Role</span><span class="meta-v">Design &amp; Development</span></div>
+        <div class="meta-item"><span class="meta-k">Platform</span><span class="meta-v">Desktop (Electron) + Mobile (Expo)</span></div>
+        <div class="meta-item"><span class="meta-k">Version</span><span class="meta-v">Desktop 2.0.1 · Mobile 2.12.0</span></div>
+      </div>
+
+      <ul class="stack-pills" aria-label="Technology stack">
+        <li class="stack-pill">Electron 33</li>
+        <li class="stack-pill">React 18</li>
+        <li class="stack-pill">Vite 5</li>
+        <li class="stack-pill">Tailwind</li>
+        <li class="stack-pill">React Native</li>
+        <li class="stack-pill">Expo</li>
+        <li class="stack-pill">Recharts</li>
+        <li class="stack-pill">Web Crypto</li>
+      </ul>
+    </header>
+
+    <figure class="proj-shot" data-reveal>
+      <img src="../../media/projects/aequo/hero.png" alt="Aequo dashboard — balances, cashflow and category breakdown"
+           width="1600" height="900" fetchpriority="high" decoding="async">
+    </figure>
+
+    <section class="proj-section" data-reveal>
+      <p class="doc-label">Overview</p>
+      <h2 class="doc-h2" data-slot><span class="ln"><span>What Aequo is</span></span></h2>
+      <p class="doc-p">
+        Aequo tracks personal finances across accounts, budgets and savings goals — on
+        <strong>desktop and on a mobile companion</strong> that read and write the same file.
+        There is no Aequo server anywhere in the picture, and no sign-up.
+      </p>
+      <p class="doc-p">
+        That constraint is the product, not a detail of the implementation, and it decides
+        arguments. Local password screens, for instance, were rejected outright: an app with no
+        accounts gains nothing real from a fake login. If data at rest needs protecting, the honest
+        answer is <em>encryption with a passphrase</em> — which is what Aequo ships.
+      </p>
+    </section>
+
+    <section class="proj-section" data-reveal>
+      <p class="doc-label">Features</p>
+      <h2 class="doc-h2" data-slot><span class="ln"><span>What it does</span></span></h2>
+      <div class="feature-grid" data-reveal-group>
+        <article class="feature-card" data-reveal>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>No account, no cloud</h3>
+          <p>Nothing to sign up for and nothing phoned home. Every record lives in one file on your own disk.</p>
+        </article>
+        <article class="feature-card" data-reveal>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 17.6A4.5 4.5 0 0 0 17.5 9h-1.3A7 7 0 1 0 4 15.9"/><path d="M12 12v9M8.5 17.5 12 21l3.5-3.5"/></svg>Bring your own cloud</h3>
+          <p>Drop the data folder in Dropbox, iCloud or Syncthing. Your client syncs the file; Aequo never sees it.</p>
+        </article>
+        <article class="feature-card" data-reveal>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 8.9 8 10 4.6-1.1 8-5 8-10V6z"/><path d="M9.5 12.5 11 14l3.5-3.5"/></svg>Encrypted backups</h3>
+          <p>AES-GCM with PBKDF2 key derivation, through the native Web Crypto API — no third-party crypto dependency.</p>
+        </article>
+        <article class="feature-card" data-reveal>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 15h4"/></svg>Accounts &amp; currencies</h3>
+          <p>Multiple accounts of different types, 14 currencies, and transfers that stay linked across both sides.</p>
+        </article>
+        <article class="feature-card" data-reveal>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg>Budgets &amp; goals</h3>
+          <p>Monthly budgets whose spend is always recomputed from the transactions, plus envelope-style savings goals.</p>
+        </article>
+        <article class="feature-card" data-reveal>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg>24 themes</h3>
+          <p>Twelve palettes across light and dark, driven by CSS variables so even portalled modals inherit them.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="proj-section" data-reveal>
+      <p class="doc-label">Under the hood</p>
+      <h2 class="doc-h2" data-slot><span class="ln"><span>One file, not a database</span></span></h2>
+      <p class="doc-p">
+        The whole dataset is a <strong>single JSON file</strong>. SQLite was the obvious choice and
+        the wrong one: its lock manager assumes exclusive local access, and a binary file that
+        mutates in place is exactly what consumer sync clients handle worst. A single JSON is
+        atomic by nature, diffs cleanly, and stays under a megabyte in normal use. The cost — every
+        save rewrites the whole file — is real, and it is paid for with a debounce.
+      </p>
+      <p class="doc-p">
+        Writes go to a temporary file, get flushed, then rename over the target, with the previous
+        version kept as a backup. Concurrent edits are caught by <strong>optimistic concurrency</strong>:
+        each save carries a hash of the revision it started from, and a poller in the main process
+        notices when the file changes underneath. On divergence Aequo stops and asks, keeping the
+        displaced version — it never silently overwrites, and it never deletes data on its own.
+      </p>
+
+      <div class="stack-table-wrap" data-reveal tabindex="0" role="region" aria-label="Technical stack table, scrollable">
+        <table class="stack-table">
+          <thead><tr><th scope="col">Layer</th><th scope="col">Technologies</th></tr></thead>
+          <tbody>
+            <tr><td>Desktop shell</td><td>Electron 33 — main process for filesystem IPC, isolated <code>contextBridge</code> preload</td></tr>
+            <tr><td>UI</td><td>React 18, Vite 5, Tailwind CSS 3, Recharts, lucide-react</td></tr>
+            <tr><td>Typography</td><td>Fraunces (display) + Inter (body), tabular figures for column alignment</td></tr>
+            <tr><td>Persistence</td><td>Single JSON file, pluggable adapters, debounced writes, atomic <code>rename</code></td></tr>
+            <tr><td>Sync</td><td>User's own cloud folder; SHA-256 revision tokens, external-change poller, conflict backups</td></tr>
+            <tr><td>Crypto</td><td>Native Web Crypto — AES-GCM + PBKDF2, no npm crypto packages</td></tr>
+            <tr><td>Schema</td><td>Versioned migrations, idempotent, blocking on downgrade rather than destructive</td></tr>
+            <tr><td>Mobile</td><td>React Native + Expo, same file format as desktop</td></tr>
+            <tr><td>Tests</td><td>Vitest — 208 unit tests over the pure calculation and storage layers</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="proj-section" data-reveal>
+      <p class="doc-label">Gallery</p>
+      <h2 class="doc-h2" data-slot><span class="ln"><span>Screens</span></span></h2>
+      <ul class="gallery" data-reveal-group>
+        <li><figure class="shot" data-reveal>
+          <img src="../../media/projects/aequo/dashboard.png" alt="Aequo — dashboard with balances and cashflow" width="1200" height="750" loading="lazy" decoding="async">
+          <figcaption>Dashboard</figcaption>
+          <button type="button" class="shot-btn" aria-label="Enlarge: dashboard"></button>
+        </figure></li>
+        <li><figure class="shot" data-reveal>
+          <img src="../../media/projects/aequo/transactions.png" alt="Aequo — transactions list" width="1200" height="750" loading="lazy" decoding="async">
+          <figcaption>Transactions</figcaption>
+          <button type="button" class="shot-btn" aria-label="Enlarge: transactions"></button>
+        </figure></li>
+        <li><figure class="shot" data-reveal>
+          <img src="../../media/projects/aequo/budgets.png" alt="Aequo — budgets and savings goals" width="1200" height="750" loading="lazy" decoding="async">
+          <figcaption>Budgets &amp; goals</figcaption>
+          <button type="button" class="shot-btn" aria-label="Enlarge: budgets and goals"></button>
+        </figure></li>
+        <li><figure class="shot" data-reveal>
+          <img src="../../media/projects/aequo/mobile.png" alt="Aequo — mobile companion" width="1200" height="750" loading="lazy" decoding="async">
+          <figcaption>Mobile companion</figcaption>
+          <button type="button" class="shot-btn" aria-label="Enlarge: mobile companion"></button>
+        </figure></li>
+      </ul>
+    </section>
+
+    <nav class="proj-nav" aria-label="Project navigation">
+      <a href="../neon-breach-echoes/" class="prev">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Previous: Neon Breach Echoes</a>
+      <a href="../mnema/" class="next">
+        Next: Mnema
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </nav>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" aria-hidden="true">
+    <button type="button" class="lightbox-close" aria-label="Close viewer">&times;</button>
+    <button type="button" class="lightbox-nav prev" aria-label="Previous screenshot">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button type="button" class="lightbox-nav next" aria-label="Next screenshot">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+    <img src="" alt="">
+    <p class="lightbox-caption"><span class="lightbox-text"></span><span class="lightbox-count"></span></p>
+  </div>
+</body>
+</html>

@@ -2,13 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Neon Breach Echoes — a 2D/3D action game with weapon-based entity combat across multiple worlds and levels.">
   <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="dark">
 
-  <!-- Open Graph / Twitter — TODO: confirm live domain (CNAME) and replace base URL -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Neon Breach Echoes — Action game · Cris Del Ninno">
+  <title>Neon Breach Echoes — Crissinop</title>
+  <link rel="canonical" href="https://delninno.com/work/neon-breach-echoes/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Cris Del Ninno">
+  <meta property="og:title" content="Neon Breach Echoes — Action game">
   <meta property="og:description" content="A 2D/3D action game with weapon-based entity combat across multiple worlds and levels.">
   <meta property="og:url" content="https://delninno.com/work/neon-breach-echoes/">
   <meta property="og:image" content="https://delninno.com/media/images/NBE.png">
@@ -16,35 +20,52 @@
   <meta name="twitter:title" content="Neon Breach Echoes — Action game">
   <meta name="twitter:description" content="A 2D/3D action game with weapon-based entity combat across multiple worlds and levels.">
   <meta name="twitter:image" content="https://delninno.com/media/images/NBE.png">
-  <link rel="canonical" href="https://delninno.com/work/neon-breach-echoes/">
 
-  <title>Neon Breach Echoes — Cris Del Ninno</title>
+  <link rel="icon" type="image/jpeg" href="../../media/images/favicon.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=DM+Mono:wght@300;400&display=swap">
 
   <link rel="stylesheet" href="../../style-custom.css">
   <link rel="stylesheet" href="../../work.css">
-  <link rel="icon" type="image/jpeg" href="../../media/images/favicon.jpg">
+
+  <script>
+    document.documentElement.classList.add('js');
+    setTimeout(function () {
+      if (!document.documentElement.dataset.enhanced) {
+        document.documentElement.classList.remove('js');
+      }
+    }, 2500);
+  </script>
+
+  <script src="../../app.js" defer></script>
+  <script src="../../work.js" defer></script>
 </head>
 
-<body>
+<!-- Per-project accent: NBE magenta -->
+<body style="--accent:#ff3d81; --accent-soft:rgba(255,61,129,.35);">
+
+  <a class="skip-link" href="#doc">Skip to content</a>
+
   <div id="cursor" aria-hidden="true"></div>
-  <div id="cursor-trail" aria-hidden="true"></div>
 
-  <nav id="navbar" role="navigation" aria-label="Main navigation">
-    <a href="../../" class="nav-logo">CRIS<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="../../#work">Work</a></li>
-      <li><a href="../../#about">About</a></li>
-      <li><a href="../../#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <header id="navbar">
+    <a href="../../" class="nav-logo">CRISSINOP<span>.</span></a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="../../#work">Work</a></li>
+        <li><a href="../../#about">About</a></li>
+        <li><a href="../../#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <span class="nav-progress" aria-hidden="true"></span>
+  </header>
 
-  <main class="doc">
+  <main class="doc" id="doc">
     <a href="../../#work" class="doc-back">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
       All work
     </a>
 
@@ -54,30 +75,33 @@
       <p class="proj-tagline">
         A <em>2D/3D action game</em> built around weapon-based entity combat, spanning multiple
         worlds and levels.
-        <!-- TODO: refine with the game's hook (setting, core loop, what makes it yours). -->
+        <!-- TODO: the hook is missing. Setting, core loop, and what makes it yours —
+             two sentences. This is the line that decides whether anyone scrolls on. -->
       </p>
 
       <div class="proj-meta">
-        <div class="meta-item"><span class="meta-k">Year</span><span class="meta-v"><!-- TODO -->2026</span></div>
+        <div class="meta-item"><span class="meta-k">Year</span><span class="meta-v">2026</span></div>
         <div class="meta-item"><span class="meta-k">Role</span><span class="meta-v">Design &amp; Development</span></div>
         <div class="meta-item"><span class="meta-k">Genre</span><span class="meta-v">Action</span></div>
-        <div class="meta-item"><span class="meta-k">Engine</span><span class="meta-v"><!-- TODO: Unity / Godot / Three.js? -->—</span></div>
+        <!-- TODO: Unity / Godot / Three.js? Fill in and drop data-todo -->
+        <div class="meta-item"><span class="meta-k">Engine</span><span class="meta-v" data-todo>To be documented</span></div>
       </div>
 
-      <!-- TODO: replace with the real stack/engine -->
-      <div class="stack-pills">
-        <span class="stack-pill">2D / 3D</span>
-        <span class="stack-pill">Game Dev</span>
-      </div>
+      <!-- TODO: replace with the real engine and language -->
+      <ul class="stack-pills" aria-label="Technology stack">
+        <li class="stack-pill">2D / 3D</li>
+        <li class="stack-pill">Game Dev</li>
+      </ul>
     </header>
 
-    <figure class="proj-shot">
-      <img src="../../media/projects/nbe/hero.png" alt="Neon Breach Echoes — gameplay">
+    <figure class="proj-shot" data-reveal>
+      <img src="../../media/projects/nbe/hero.png" alt="Neon Breach Echoes — gameplay scene"
+           width="1600" height="900" fetchpriority="high" decoding="async">
     </figure>
 
-    <section class="proj-section">
-      <p class="doc-label">01 — Overview</p>
-      <h2 class="doc-h2">About the game</h2>
+    <section class="proj-section" data-reveal>
+      <p class="doc-label">Overview</p>
+      <h2 class="doc-h2" data-slot><span class="ln"><span>About the game</span></span></h2>
       <p class="doc-p">
         Neon Breach Echoes is an action game mixing 2D and 3D combat, where the player fights
         entities using a range of weapons across a series of worlds and levels.
@@ -85,73 +109,76 @@
       </p>
     </section>
 
-    <section class="proj-section">
-      <p class="doc-label">02 — Features</p>
-      <h2 class="doc-h2">Core mechanics</h2>
-      <div class="feature-grid">
-        <!-- TODO: replace with real mechanics -->
-        <article class="feature-card">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21l6-6M14 4l6 6M9 15l1.5 1.5M13 11l-2-2M17 3l4 4-9 9-4-4z"/></svg>Weapon-based combat</h3>
+    <section class="proj-section" data-reveal>
+      <p class="doc-label">Features</p>
+      <h2 class="doc-h2" data-slot><span class="ln"><span>Core mechanics</span></span></h2>
+      <div class="feature-grid" data-reveal-group>
+        <article class="feature-card" data-reveal>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 21l6-6M14 4l6 6M9 15l1.5 1.5M13 11l-2-2M17 3l4 4-9 9-4-4z"/></svg>Weapon-based combat</h3>
           <p>Fight entities with a variety of weapons.</p>
         </article>
-        <article class="feature-card">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 3a15 15 0 0 0 0 18M3 12h18"/></svg>Multiple worlds &amp; levels</h3>
+        <article class="feature-card" data-reveal>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a15 15 0 0 0 0 18M3 12h18"/></svg>Multiple worlds &amp; levels</h3>
           <p>Progress across distinct worlds, each with its own levels.</p>
         </article>
-        <article class="feature-card">
-          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2 2 3-1 1 3 3 1-1 3 2 2-2 2 1 3-3 1-1 3-3-1-2 2-2-2-3 1-1-3-3-1 1-3-2-2 2-2-1-3 3-1 1-3 3 1z"/></svg>2D / 3D blend</h3>
+        <article class="feature-card" data-reveal>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2l2 2 3-1 1 3 3 1-1 3 2 2-2 2 1 3-3 1-1 3-3-1-2 2-2-2-3 1-1-3-3-1 1-3-2-2 2-2-1-3 3-1 1-3 3 1z"/></svg>2D / 3D blend</h3>
           <p>Gameplay moves between 2D and 3D perspectives.</p>
         </article>
       </div>
     </section>
 
-    <section class="proj-section">
-      <p class="doc-label">03 — Under the hood</p>
-      <h2 class="doc-h2">Technical stack</h2>
-      <div class="stack-table-wrap">
-        <table class="stack-table">
-          <thead><tr><th>Layer</th><th>Technologies</th></tr></thead>
-          <tbody>
-            <!-- TODO: fill in engine, language, tools -->
-            <tr><td>Engine</td><td>—</td></tr>
-            <tr><td>Language</td><td>—</td></tr>
-            <tr><td>Assets</td><td>—</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+    <!-- Stack table removed until the engine and language are known. Shipping a
+         table of em-dashes tells a visitor the project is abandoned. -->
 
-    <section class="proj-section">
-      <p class="doc-label">04 — Gallery</p>
-      <h2 class="doc-h2">Screens</h2>
-      <div class="gallery">
-        <figure class="shot"><img src="../../media/projects/nbe/01.png" alt="Neon Breach Echoes — screen 1"><figcaption><!-- TODO -->Gameplay</figcaption></figure>
-        <figure class="shot"><img src="../../media/projects/nbe/02.png" alt="Neon Breach Echoes — screen 2"><figcaption><!-- TODO -->Level</figcaption></figure>
-        <figure class="shot"><img src="../../media/projects/nbe/03.png" alt="Neon Breach Echoes — screen 3"><figcaption><!-- TODO -->Combat</figcaption></figure>
-        <figure class="shot"><img src="../../media/projects/nbe/04.png" alt="Neon Breach Echoes — screen 4"><figcaption><!-- TODO -->World</figcaption></figure>
-      </div>
+    <section class="proj-section" data-reveal>
+      <p class="doc-label">Gallery</p>
+      <h2 class="doc-h2" data-slot><span class="ln"><span>Screens</span></span></h2>
+      <ul class="gallery" data-reveal-group>
+        <li><figure class="shot" data-reveal>
+          <img src="../../media/projects/nbe/01.png" alt="Neon Breach Echoes — gameplay" width="1200" height="750" loading="lazy" decoding="async">
+          <figcaption>Gameplay</figcaption>
+          <button type="button" class="shot-btn" aria-label="Enlarge: gameplay"></button>
+        </figure></li>
+        <li><figure class="shot" data-reveal>
+          <img src="../../media/projects/nbe/02.png" alt="Neon Breach Echoes — level design" width="1200" height="750" loading="lazy" decoding="async">
+          <figcaption>Level</figcaption>
+          <button type="button" class="shot-btn" aria-label="Enlarge: level"></button>
+        </figure></li>
+        <li><figure class="shot" data-reveal>
+          <img src="../../media/projects/nbe/03.png" alt="Neon Breach Echoes — combat" width="1200" height="750" loading="lazy" decoding="async">
+          <figcaption>Combat</figcaption>
+          <button type="button" class="shot-btn" aria-label="Enlarge: combat"></button>
+        </figure></li>
+        <li><figure class="shot" data-reveal>
+          <img src="../../media/projects/nbe/04.png" alt="Neon Breach Echoes — world overview" width="1200" height="750" loading="lazy" decoding="async">
+          <figcaption>World</figcaption>
+          <button type="button" class="shot-btn" aria-label="Enlarge: world"></button>
+        </figure></li>
+      </ul>
     </section>
 
     <nav class="proj-nav" aria-label="Project navigation">
-      <a href="../../#work" class="prev">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        Back to work
-      </a>
-      <a href="../mnema/" class="next">
-        Next: Mnema
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <a href="../margin/" class="prev">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Previous: Margin</a>
+      <a href="../aequo/" class="next">
+        Next: Aequo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </nav>
   </main>
 
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" aria-label="Close">×</button>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" aria-hidden="true">
+    <button type="button" class="lightbox-close" aria-label="Close viewer">&times;</button>
+    <button type="button" class="lightbox-nav prev" aria-label="Previous screenshot">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button type="button" class="lightbox-nav next" aria-label="Next screenshot">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
     <img src="" alt="">
+    <p class="lightbox-caption"><span class="lightbox-text"></span><span class="lightbox-count"></span></p>
   </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="../../gsap-animations.js"></script>
-  <script src="../../work.js"></script>
 </body>
 </html>
