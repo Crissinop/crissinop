@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Margin — an app for daily tasks and to-do management.">
+  <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="dark">
+
+  <title>Margin — Crissinop</title>
+  <link rel="canonical" href="https://delninno.com/work/margin/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Cris Del Ninno">
+  <meta property="og:title" content="Margin — Tasks &amp; to-do">
+  <meta property="og:description" content="An app for daily tasks and to-do management.">
+  <meta property="og:url" content="https://delninno.com/work/margin/">
+  <meta property="og:image" content="https://delninno.com/media/images/margin.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Margin — Tasks &amp; to-do">
+  <meta name="twitter:description" content="An app for daily tasks and to-do management.">
+  <meta name="twitter:image" content="https://delninno.com/media/images/margin.png">
+
+  <link rel="icon" type="image/jpeg" href="../../media/images/favicon.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=DM+Mono:wght@300;400&display=swap">
+
+  <link rel="stylesheet" href="../../style-custom.css">
+  <link rel="stylesheet" href="../../work.css">
+
+  <script>
+    document.documentElement.classList.add('js');
+    setTimeout(function () {
+      if (!document.documentElement.dataset.enhanced) {
+        document.documentElement.classList.remove('js');
+      }
+    }, 2500);
+  </script>
+
+  <script src="../../app.js" defer></script>
+  <script src="../../work.js" defer></script>
+</head>
+
+<!-- Per-project accent: Margin amber -->
+<body style="--accent:#d9902f; --accent-soft:rgba(217,144,47,.35);">
+
+  <a class="skip-link" href="#doc">Skip to content</a>
+
+  <div id="cursor" aria-hidden="true"></div>
+
+  <header id="navbar">
+    <a href="../../" class="nav-logo">CRISSINOP<span>.</span></a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="../../#work">Work</a></li>
+        <li><a href="../../#about">About</a></li>
+        <li><a href="../../#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <span class="nav-progress" aria-hidden="true"></span>
+  </header>
+
+  <main class="doc" id="doc">
+    <a href="../../#work" class="doc-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      All work
+    </a>
+
+    <header class="proj-hero">
+      <p class="proj-eyebrow">App</p>
+      <h1 class="proj-title">Margin</h1>
+      <p class="proj-tagline">
+        An app for <em>daily tasks and to-do management</em> — a focused space to plan the day and
+        keep track of what matters.
+        <!-- TODO: sharpen this with the real angle — offline-first? calendar sync?
+             deliberately minimal? One concrete differentiator beats three adjectives. -->
+      </p>
+
+      <div class="proj-meta">
+        <div class="meta-item"><span class="meta-k">Year</span><span class="meta-v">2026</span></div>
+        <div class="meta-item"><span class="meta-k">Role</span><span class="meta-v">Design &amp; Development</span></div>
+        <!-- TODO: fill in and drop the data-todo attribute -->
+        <div class="meta-item"><span class="meta-k">Platform</span><span class="meta-v" data-todo>To be documented</span></div>
+        <div class="meta-item"><span class="meta-k">Type</span><span class="meta-v">Personal project</span></div>
+      </div>
+
+      <!-- TODO: replace with the real stack -->
+      <ul class="stack-pills" aria-label="Technology stack">
+        <li class="stack-pill">JavaScript</li>
+        <li class="stack-pill">HTML &amp; CSS</li>
+      </ul>
+    </header>
+
+    <figure class="proj-shot" data-reveal>
+      <img src="../../media/projects/margin/hero.png" alt="Margin main interface"
+           width="1600" height="900" fetchpriority="high" decoding="async">
+    </figure>
+
+    <section class="proj-section" data-reveal>
+      <p class="doc-label">Overview</p>
+      <h2 class="doc-h2" data-slot><span class="ln"><span>What Margin is</span></span></h2>
+      <p class="doc-p">
+        Margin helps you manage daily tasks and to-dos without the overhead of a full project tool.
+        <!-- TODO: 2–3 sentences on the problem it solves and how it works. Recruiters
+             read this section and skip the feature grid. -->
+      </p>
+    </section>
+
+    <section class="proj-section" data-reveal>
+      <p class="doc-label">Features</p>
+      <h2 class="doc-h2" data-slot><span class="ln"><span>What it does</span></span></h2>
+      <div class="feature-grid" data-reveal-group>
+        <article class="feature-card" data-reveal>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Task management</h3>
+          <p>Create, organise and complete daily tasks.</p>
+        </article>
+        <article class="feature-card" data-reveal>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Daily planning</h3>
+          <p>A clear view of what needs to happen today.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- The stack table is commented out rather than shipped full of em-dashes.
+         An empty table reads as an unfinished site; a missing section reads as a
+         focused one. Restore it once you have the real values. -->
+
+    <section class="proj-section" data-reveal>
+      <p class="doc-label">Gallery</p>
+      <h2 class="doc-h2" data-slot><span class="ln"><span>Screens</span></span></h2>
+      <ul class="gallery" data-reveal-group>
+        <li><figure class="shot" data-reveal>
+          <img src="../../media/projects/margin/01.png" alt="Margin — task list view" width="1200" height="750" loading="lazy" decoding="async">
+          <figcaption>Task list</figcaption>
+          <button type="button" class="shot-btn" aria-label="Enlarge: task list"></button>
+        </figure></li>
+        <li><figure class="shot" data-reveal>
+          <img src="../../media/projects/margin/02.png" alt="Margin — daily planning view" width="1200" height="750" loading="lazy" decoding="async">
+          <figcaption>Daily planning</figcaption>
+          <button type="button" class="shot-btn" aria-label="Enlarge: daily planning"></button>
+        </figure></li>
+      </ul>
+    </section>
+
+    <nav class="proj-nav" aria-label="Project navigation">
+      <a href="../mnema/" class="prev">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Previous: Mnema
+      </a>
+      <a href="../neon-breach-echoes/" class="next">
+        Next: Neon Breach Echoes
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </nav>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" aria-hidden="true">
+    <button type="button" class="lightbox-close" aria-label="Close viewer">&times;</button>
+    <button type="button" class="lightbox-nav prev" aria-label="Previous screenshot">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button type="button" class="lightbox-nav next" aria-label="Next screenshot">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+    <img src="" alt="">
+    <p class="lightbox-caption"><span class="lightbox-text"></span><span class="lightbox-count"></span></p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mnema — a desktop personal knowledge management app: markdown editor, 2D/3D document graph, built-in LLM assistance and versioning.">
+  <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="dark">
+
+  <title>Mnema — Crissinop</title>
+  <link rel="canonical" href="https://delninno.com/work/mnema/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Cris Del Ninno">
+  <meta property="og:title" content="Mnema — Personal knowledge management">
+  <meta property="og:description" content="Desktop PKM app: markdown editor, 2D/3D document graph, LLM integration and versioning.">
+  <meta property="og:url" content="https://delninno.com/work/mnema/">
+  <meta property="og:image" content="https://delninno.com/media/images/mnema.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mnema — Personal knowledge management">
+  <meta name="twitter:description" content="Desktop PKM app: markdown editor, 2D/3D document graph, LLM integration and versioning.">
+  <meta name="twitter:image" content="https://delninno.com/media/images/mnema.png">
+
+  <link rel="icon" type="image/jpeg" href="../../media/images/favicon.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=DM+Mono:wght@300;400&display=swap">
+
+  <link rel="stylesheet" href="../../style-custom.css">
+  <link rel="stylesheet" href="../../work.css">
+
+  <script>
+    document.documentElement.classList.add('js');
+    setTimeout(function () {
+      if (!document.documentElement.dataset.enhanced) {
+        document.documentElement.classList.remove('js');
+      }
+    }, 2500);
+  </script>
+
+  <script src="../../app.js" defer></script>
+  <script src="../../work.js" defer></script>
+</head>
+
+<!-- Per-project accent: Mnema terracotta -->
+<body style="--accent:#d95323; --accent-soft:rgba(217,83,35,.35);">
+
+  <a class="skip-link" href="#doc">Skip to content</a>
+
+  <div id="cursor" aria-hidden="true"></div>
+
+  <header id="navbar">
+    <a href="../../" class="nav-logo">CRISSINOP<span>.</span></a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="../../#work">Work</a></li>
+        <li><a href="../../#about">About</a></li>
+        <li><a href="../../#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <span class="nav-progress" aria-hidden="true"></span>
+  </header>
+
+  <main class="doc" id="doc">
+    <a href="../../#work" class="doc-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      All work
+    </a>
+
+    <header class="proj-hero">
+      <p class="proj-eyebrow">App · Desktop</p>
+      <h1 class="proj-title">Mnema</h1>
+      <p class="proj-tagline">
+        A desktop <em>personal knowledge management</em> tool: a markdown editor wrapped around a
+        living graph of the links between your documents — in 2D and 3D — with built-in LLM
+        assistance and versioning.
+      </p>
+
+      <div class="proj-meta">
+        <div class="meta-item"><span class="meta-k">Year</span><span class="meta-v">2026</span></div>
+        <div class="meta-item"><span class="meta-k">Role</span><span class="meta-v">Design &amp; Development</span></div>
+        <div class="meta-item"><span class="meta-k">Platform</span><span class="meta-v">Desktop — Tauri 2</span></div>
+        <div class="meta-item"><span class="meta-k">Type</span><span class="meta-v">Personal project</span></div>
+      </div>
+
+      <ul class="stack-pills" aria-label="Technology stack">
+        <li class="stack-pill">Tauri 2</li>
+        <li class="stack-pill">Rust</li>
+        <li class="stack-pill">React 18</li>
+        <li class="stack-pill">TypeScript</li>
+        <li class="stack-pill">SQLite</li>
+        <li class="stack-pill">Three.js</li>
+        <li class="stack-pill">Cytoscape.js</li>
+        <li class="stack-pill">Ollama</li>
+      </ul>
+    </header>
+
+    <figure class="proj-shot" data-reveal>
+      <img src="../../media/projects/mnema/hero.png" alt="Mnema main interface — editor and graph side by side"
+           width="1600" height="900" fetchpriority="high" decoding="async">
+    </figure>
+
+    <section class="proj-section" data-reveal>
+      <p class="doc-label">Overview</p>
+      <h2 class="doc-h2" data-slot><span class="ln"><span>What Mnema is</span></span></h2>
+      <p class="doc-p">
+        Mnema is a <strong>desktop application</strong> for personal documentation: a place to write,
+        connect and revisit knowledge. It pairs a markdown editor with a <strong>graph of the links
+        between documents</strong>, rendered both as a 2D map and as a navigable 3D space, and adds
+        an LLM layer and versioning on top.
+      </p>
+      <p class="doc-p">
+        The name comes from ancient Greek <em>μνῆμα</em> (<strong>mnêma</strong>) — a memorial, that
+        which is remembered. The app is built around that idea: not just storing notes, but keeping
+        the relationships between them visible and alive.
+      </p>
+    </section>
+
+    <section class="proj-section" data-reveal>
+      <p class="doc-label">Features</p>
+      <h2 class="doc-h2" data-slot><span class="ln"><span>What it does</span></span></h2>
+      <div class="feature-grid" data-reveal-group>
+        <article class="feature-card" data-reveal>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8M8 9h2"/></svg>Markdown editor</h3>
+          <p>Write documentation in markdown with a clean, focused editing surface.</p>
+        </article>
+        <article class="feature-card" data-reveal>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7 7.5l4 8M17 7.5l-4 8"/></svg>2D &amp; 3D link graph</h3>
+          <p>See the connections between documents as an interactive graph — Cytoscape.js for 2D, a force-directed Three.js scene for 3D.</p>
+        </article>
+        <article class="feature-card" data-reveal>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>LLM integration</h3>
+          <p>Local models via Ollama, plus external providers: Anthropic, OpenAI, Google and any OpenAI-compatible endpoint.</p>
+        </article>
+        <article class="feature-card" data-reveal>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>Local-first storage</h3>
+          <p>Everything lives in a local SQLite database with a custom incremental migration system.</p>
+        </article>
+        <article class="feature-card" data-reveal>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15h6"/></svg>PDF extraction</h3>
+          <p>Pulls text out of PDFs with the Rust <code>pdf-extract</code> crate, silencing its ligature noise.</p>
+        </article>
+        <article class="feature-card" data-reveal>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="9" r="2.5"/><path d="M6 8.5v7M8.5 6H14a3 3 0 0 1 3 3"/></svg>Versioning</h3>
+          <p>Document history is tracked, so you can see how a note evolved over time.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="proj-section" data-reveal>
+      <p class="doc-label">Under the hood</p>
+      <h2 class="doc-h2" data-slot><span class="ln"><span>Technical stack</span></span></h2>
+      <div class="stack-table-wrap" data-reveal tabindex="0" role="region" aria-label="Technical stack table, scrollable">
+        <table class="stack-table">
+          <thead><tr><th scope="col">Layer</th><th scope="col">Technologies</th></tr></thead>
+          <tbody>
+            <tr><td>Runtime / build</td><td>Tauri 2, React 18, TypeScript, Vite, Tokio (<code>rt-multi-thread</code>)</td></tr>
+            <tr><td>UI</td><td>Tailwind CSS, Zustand, Lucide icons, custom SVG icons</td></tr>
+            <tr><td>Graph</td><td>Cytoscape.js (2D), <code>3d-force-graph</code> + Three.js (3D)</td></tr>
+            <tr><td>Data</td><td>SQLite with a custom incremental migration system</td></tr>
+            <tr><td>LLM</td><td>Ollama (local) + Anthropic, OpenAI, Google, OpenAI-compatible endpoints</td></tr>
+            <tr><td>PDF</td><td><code>pdf-extract</code> (Rust) with a <code>StderrSilencer</code> for ligature spam</td></tr>
+            <tr><td>External links</td><td><code>tauri-plugin-opener</code></td></tr>
+            <tr><td>Dev environment</td><td>Windows — <code>npm run tauri:dev</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="proj-section" data-reveal>
+      <p class="doc-label">Gallery</p>
+      <h2 class="doc-h2" data-slot><span class="ln"><span>Screens</span></span></h2>
+      <ul class="gallery" data-reveal-group>
+        <li><figure class="shot" data-reveal>
+          <img src="../../media/projects/mnema/editor.png" alt="Mnema markdown editor" width="1200" height="750" loading="lazy" decoding="async">
+          <figcaption>Markdown editor</figcaption>
+          <button type="button" class="shot-btn" aria-label="Enlarge: markdown editor"></button>
+        </figure></li>
+        <li><figure class="shot" data-reveal>
+          <img src="../../media/projects/mnema/graph-2d.png" alt="Mnema 2D knowledge graph" width="1200" height="750" loading="lazy" decoding="async">
+          <figcaption>2D knowledge graph</figcaption>
+          <button type="button" class="shot-btn" aria-label="Enlarge: 2D knowledge graph"></button>
+        </figure></li>
+        <li><figure class="shot" data-reveal>
+          <img src="../../media/projects/mnema/graph-3d.png" alt="Mnema 3D knowledge graph" width="1200" height="750" loading="lazy" decoding="async">
+          <figcaption>3D knowledge graph</figcaption>
+          <button type="button" class="shot-btn" aria-label="Enlarge: 3D knowledge graph"></button>
+        </figure></li>
+        <li><figure class="shot" data-reveal>
+          <img src="../../media/projects/mnema/llm.png" alt="Mnema LLM assistant panel" width="1200" height="750" loading="lazy" decoding="async">
+          <figcaption>LLM assistant</figcaption>
+          <button type="button" class="shot-btn" aria-label="Enlarge: LLM assistant"></button>
+        </figure></li>
+      </ul>
+    </section>
+
+    <nav class="proj-nav" aria-label="Project navigation">
+      <a href="../neon-breach-echoes/" class="prev">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Previous: Neon Breach Echoes
+      </a>
+      <a href="../margin/" class="next">
+        Next: Margin
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </nav>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" aria-hidden="true">
+    <button type="button" class="lightbox-close" aria-label="Close viewer">&times;</button>
+    <button type="button" class="lightbox-nav prev" aria-label="Previous screenshot">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button type="button" class="lightbox-nav next" aria-label="Next screenshot">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+    <img src="" alt="">
+    <p class="lightbox-caption"><span class="lightbox-text"></span><span class="lightbox-count"></span></p>
+  </div>
+</body>
+</html>

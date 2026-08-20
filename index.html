@@ -1,291 +1,392 @@
 <!DOCTYPE html>
-<html lang="it">
-  
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cris Del Ninno — Italy-based IAM Engineer & Web Developer. Sites · Apps">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Crissinop — Cristiano Del Ninno, Okta / IAM consultant and web developer based in Italy.">
   <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="dark">
 
-  <!-- Open Graph / Twitter — TODO: confirm your live domain (from CNAME) and replace the base URL. -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Cris Del Ninno — Sites · Apps">
-  <meta property="og:description" content="Italy-based IAM Engineer & Web Developer.">
-  <meta property="og:url" content="https://delninno.com/">
-  <meta property="og:image" content="https://delninno.com/media/images/og.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cris Del Ninno — Sites · Apps">
-  <meta name="twitter:description" content="Italy-based IAM Engineer & Web Developer.">
-  <meta name="twitter:image" content="https://delninno.com/media/images/og.png">
+  <title>Crissinop — Cris Del Ninno</title>
   <link rel="canonical" href="https://delninno.com/">
 
-  <!-- Brand: aligned <title> to the og:title. Revert to "Crissinop" if you prefer the handle. -->
-  <title>Cris Del Ninno — Sites · Apps</title>
+  <!-- TODO: confirm the live domain in CNAME, then export a 1200x630 og.png. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Crissinop">
+  <meta property="og:title" content="Crissinop — Cris Del Ninno">
+  <meta property="og:description" content="Okta / IAM consultant and web developer, based in Italy.">
+  <meta property="og:url" content="https://delninno.com/">
+  <meta property="og:image" content="https://delninno.com/media/images/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Crissinop — Cris Del Ninno">
+  <meta name="twitter:description" content="Okta / IAM consultant and web developer, based in Italy.">
+  <meta name="twitter:image" content="https://delninno.com/media/images/og.png">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-
-  <!-- GSAP (preloaded) -->
-  <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js">
-  <link rel="preload" as="script" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js">
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: { neon: '#00d4ff' },
-          fontFamily: {
-            display: ['Space Grotesk', 'sans-serif'],
-            mono: ['DM Mono', 'monospace'],
-          },
-          boxShadow: {
-            neon: '0 0 20px rgba(0,212,255,0.6), 0 0 40px rgba(0,212,255,0.3)',
-            'neon-sm': '0 0 10px rgba(0,212,255,0.5), 0 0 20px rgba(0,212,255,0.2)',
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style-custom.css">
-
-  <!-- Favicon (MIME type matches the .jpg file) -->
   <link rel="icon" type="image/jpeg" href="media/images/favicon.jpg">
 
-  <!-- Safety net: many elements start at opacity:0 and are revealed by GSAP.
-       If JS is disabled, reveal everything so the page is never blank. -->
-  <noscript>
-    <style>
-      .hero-eyebrow,.hero-name,.hero-pills,.explore-btn,.scroll-hint,
-      .section-label,.section-title,.filter-bar,.project-card,
-      .about-name,.about-bio,.about-tags,.about-right,
-      .contact-title,.contact-sub,.contact-email,.social-links{opacity:1!important;transform:none!important}
-      #cursor,#cursor-trail{display:none}
-    </style>
-  </noscript>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=DM+Mono:wght@300;400&display=swap">
 
-  <!-- Icons (inline SVG icons used instead of CDN for performance) -->
-</head>
-
-
-<body class="bg-[#080808] text-white antialiased">
-
-  <!-- Custom Cursor -->
-  <div id="cursor" aria-hidden="true"></div>
-  <div id="cursor-trail" aria-hidden="true"></div>
-
-  <!-- ===================== NAVBAR ===================== -->
-  <nav id="navbar" role="navigation" aria-label="Main navigation">
-    <a href="#" class="nav-logo">CRIS<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="#work">Work</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- ===================== HERO ===================== -->
-  <section id="hero" aria-label="Hero section">
-    <div class="hero-bg-glow"></div>
-    <div class="hero-grid"></div>
-
-    <p class="hero-eyebrow relative z-10">Italia · 2026</p>
-
-    <h1 class="hero-name relative z-10">
-      CRIS<br><em>DEL NINNO</em>
-    </h1>
-
-    <div class="hero-pills relative z-10" role="list" aria-label="Specializations">
-      <span class="hero-pill" role="listitem">Sites</span>
-      <span class="hero-pill" role="listitem">Apps</span>
-      <span class="hero-pill" role="listitem">IAM</span>
-      <span class="hero-pill" role="listitem">Web Dev</span>
-    </div>
-
-    <a href="#work" class="explore-btn relative z-10" aria-label="Explore my work">Explore ↓</a>
-
-    <div class="scroll-hint" aria-hidden="true">
-      <div class="scroll-line"></div>
-      <span>Scroll</span>
-    </div>
-  </section>
-
-  <!-- ===================== WORK ===================== -->
-  <main id="work" aria-label="Portfolio projects">
-    <p class="section-label">Selected Work</p>
-    <h2 class="section-title">Projects.</h2>
-
-    <!-- Filter bar -->
-    <div class="filter-bar" role="group" aria-label="Filter projects by category">
-      <button class="filter-btn active" data-filter="ALL" aria-pressed="true"><span>All</span></button>
-      <button class="filter-btn" data-filter="SITES" aria-pressed="false"><span>Sites</span></button>
-      <button class="filter-btn" data-filter="APPS" aria-pressed="false"><span>Apps</span></button>
-    </div>
-
-    <!-- Projects grid (populated by JS) -->
-    <div class="projects-grid" id="projects-grid" aria-live="polite" aria-label="Projects grid">
-    </div>
-  </main>
-
-  <!-- ===================== ABOUT ===================== -->
-  <section id="about" aria-label="About me">
-    <div class="about-left">
-      <p class="section-label">About</p>
-      <h2 class="about-name">IAM<br>Engineer<br><em>&amp; Creator</em></h2>
-      <p class="about-bio">
-        <strong>Italy-based</strong> professional at the intersection of identity engineering
-        and modern web development. I build <strong>identity &amp; access management systems</strong>
-        by day and craft <strong>websites and applications</strong> by night.
-        Currently working with Okta IAM systems while developing custom web projects
-        with modern JavaScript stacks and creative tooling.
-      </p>
-      <div class="about-tags">
-        <span class="about-tag">Okta IAM</span>
-        <span class="about-tag">Web Dev</span>
-        <span class="about-tag">JavaScript</span>
-        <span class="about-tag">HTML &amp; CSS</span>
-        <span class="about-tag">GSAP</span>
-        <span class="about-tag">Node.js</span>
-        <span class="about-tag">Three.js</span>
-        <span class="about-tag">Java</span>
-      </div>
-    </div>
-
-    <div class="about-right">
-      <div class="about-stats">
-        <div class="stat-card">
-          <div class="stat-num" data-count="12" data-suffix="+">0+</div>
-          <div class="stat-label">Projects<br>Completed</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num" data-count="3" data-suffix="y">0y</div>
-          <div class="stat-label">Years of<br>Experience</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num" data-count="8" data-suffix="">0</div>
-          <div class="stat-label">Tech<br>Stack</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num" data-count="100" data-suffix="%">0%</div>
-          <div class="stat-label">Passion<br>Level</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== CONTACT ===================== -->
-  <section id="contact" aria-label="Contact">
-    <h2 class="contact-title">Let's create<br>something.</h2>
-    <p class="contact-sub">Available for freelance, collabs &amp; creative projects.</p>
-
-    <div class="social-links" role="list" aria-label="Social links">
-      <!-- Instagram -->
-      <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer"
-         class="social-link" aria-label="Instagram" role="listitem">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-          <circle cx="12" cy="12" r="4"/>
-          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
-        </svg>
-      </a>
-      <!-- LinkedIn -->
-      <a href="https://www.linkedin.com/in/cristiano-del-ninno-b3b258297" target="_blank" rel="noopener noreferrer"
-         class="social-link" aria-label="LinkedIn" role="listitem">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-          <rect x="2" y="9" width="4" height="12"/>
-          <circle cx="4" cy="4" r="2"/>
-        </svg>
-      </a>
-      <!-- GitHub -->
-      <a href="https://github.com/Crissinop" target="_blank" rel="noopener noreferrer"
-         class="social-link" aria-label="GitHub" role="listitem">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-        </svg>
-      </a>
-    </div>
-
-    <p class="footer-copy">
-      © 2026 <span>Cris Del Ninno</span> · Crafted in Italy · All rights reserved
-    </p>
-  </section>
-
-  <!-- ===================== SCRIPTS ===================== -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="projects.js"></script>
-  <script src="gsap-animations.js"></script>
+  <link rel="stylesheet" href="style-custom.css">
 
   <script>
-    // ---- Navbar scroll state ----
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
-
-    // ---- Disable right-click context menu globally ----
-    // Note: this is a UX/aesthetic choice (preserves the custom cursor look),
-    // NOT a content protection mechanism — DevTools, view-source, and any
-    // HTTP client can still access every asset on this page.
-    document.addEventListener('contextmenu', (e) => e.preventDefault());
-
-    // ---- Render Projects ----
-    function renderProjects(list) {
-      const grid = document.getElementById('projects-grid');
-      grid.innerHTML = list.map(p => {
-        const isExternal = p.url && p.url !== '#' && /^https?:\/\//i.test(p.url);
-        const linkAttrs = isExternal
-          ? `href="${p.url}" target="_blank" rel="noopener noreferrer"`
-          : `href="${p.url}"`;
-        return `
-        <article class="project-card" data-cat="${p.cat}" aria-label="${p.title}">
-          <img
-            class="project-img"
-            src="${p.img}"
-            alt="${p.title}"
-            loading="lazy"
-            decoding="async"
-          >
-          <span class="project-tag" aria-hidden="true">${p.cat}</span>
-          <div class="project-info">
-            <h3 class="project-title">${p.title}</h3>
-            <p class="project-desc">${p.desc}</p>
-            <span class="project-cta" aria-hidden="true">
-              View project
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </span>
-          </div>
-          <a ${linkAttrs} class="card-link" aria-label="View ${p.title}"></a>
-        </article>
-      `;
-      }).join('');
-    }
-
-    // Initial render
-    renderProjects(projects);
-
-    // ---- Init everything ----
-    document.addEventListener('DOMContentLoaded', () => {
-      initCursor();
-      initAnimations();
-      initFilters();
-
-      // Update ARIA pressed states on filter click
-      document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          document.querySelectorAll('.filter-btn').forEach(b => b.setAttribute('aria-pressed', 'false'));
-          btn.setAttribute('aria-pressed', 'true');
-        });
-      });
-    });
+    document.documentElement.classList.add('js');
+    setTimeout(function () {
+      if (!document.documentElement.dataset.enhanced) {
+        document.documentElement.classList.remove('js');
+      }
+    }, 2500);
   </script>
+
+  <script src="app.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Cristiano Del Ninno",
+    "alternateName": ["Cris Del Ninno", "Crissinop"],
+    "jobTitle": "IAM Consultant",
+    "url": "https://delninno.com/",
+    "address": { "@type": "PostalAddress", "addressCountry": "IT" },
+    "sameAs": [
+      "https://github.com/Crissinop",
+      "https://www.linkedin.com/in/cristiano-del-ninno-b3b258297"
+    ],
+    "knowsAbout": ["Okta", "Identity and Access Management", "SAML", "OpenID Connect", "JavaScript", "Web Development"]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#work">Skip to content</a>
+
+  <!-- One element. A blue sphere, nothing else. -->
+  <div id="cursor" aria-hidden="true"></div>
+
+  <header id="navbar">
+    <a href="#hero" class="nav-logo">CRISSINOP<span>.</span></a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <span class="nav-progress" aria-hidden="true"></span>
+  </header>
+
+  <main id="main">
+
+    <!-- ===================== HERO ===================== -->
+    <section id="hero" aria-labelledby="hero-name">
+      <div class="hero-bg-glow" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <!--
+          EXTRUDED MASTHEAD
+          Four copies of the same word stacked along the Z axis inside a single
+          transform-style: preserve-3d scene. Because they sit at real depths, the
+          browser's own perspective projection does the work: tilt the deck and the
+          layers separate exactly as a solid slab of type would. That is a genuine
+          3D object, not a translate faking parallax.
+
+          The deck holds a permanent base rotation, so the extrusion is visible the
+          instant the page paints — including on phones, where there is no pointer
+          to drive it. The pointer only modulates around that rest pose.
+
+          Letters are split for the entrance stagger only: the <h1> carries a
+          plain sr-only string and every decorative layer is hidden from AT.
+        -->
+        <h1 class="masthead" id="hero-name">
+          <span class="sr-only">Crissinop</span>
+
+          <span class="stage" aria-hidden="true">
+            <span class="deck">
+              <span class="layer layer-glow">CRISSINOP</span>
+              <span class="layer layer-back">CRISSINOP</span>
+              <span class="layer layer-mid">CRISSINOP</span>
+              <span class="layer layer-front"><span class="ch" style="--i:0">C</span><span class="ch" style="--i:1">R</span><span class="ch" style="--i:2">I</span><span class="ch" style="--i:3">S</span><span class="ch" style="--i:4">S</span><span class="ch" style="--i:5">I</span><span class="ch" style="--i:6">N</span><span class="ch" style="--i:7">O</span><span class="ch" style="--i:8">P</span></span>
+            </span>
+          </span>
+        </h1>
+
+        <p class="hero-role">IAM Engineer <span>&amp;</span> Web Developer</p>
+
+        <ul class="hero-pills" aria-label="Specializations">
+          <li class="hero-pill">Sites</li>
+          <li class="hero-pill">Apps</li>
+          <li class="hero-pill">IAM</li>
+          <li class="hero-pill">Web Dev</li>
+        </ul>
+
+        <a href="#work" class="explore-btn">
+          Explore
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+            <path d="M12 5v14M19 12l-7 7-7-7"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <!-- ===================== WORK ===================== -->
+    <section id="work" aria-labelledby="work-title">
+      <p class="section-label" data-reveal>Selected Work</p>
+      <!--
+        Headings reveal by climbing out of an overflow-hidden slot. This replaces
+        a clip-path reveal whose open state used a negative inset — a value some
+        engines reject outright, which left the declaration dropped and every
+        heading permanently clipped to zero height. Transform-only, no such risk.
+      -->
+      <h2 class="section-title" id="work-title" data-slot>
+        <span class="ln"><span>Projects.</span></span>
+      </h2>
+
+      <div class="filter-bar" role="group" aria-label="Filter projects by category" data-reveal>
+        <button type="button" class="filter-btn" data-filter="ALL"   aria-pressed="true">All</button>
+        <button type="button" class="filter-btn" data-filter="SITES" aria-pressed="false">Sites</button>
+        <button type="button" class="filter-btn" data-filter="APPS"  aria-pressed="false">Apps</button>
+      </div>
+
+      <div class="projects-grid" id="projects-grid" data-reveal-group>
+
+        <article class="project-card" data-cat="SITES" data-reveal>
+          <div class="tile">
+            <img class="project-img" src="media/images/whosfra.png"
+                 alt="whosfra.com homepage — dark portfolio layout for a video editor"
+                 width="800" height="500" fetchpriority="high" decoding="async">
+            <span class="tile-wash" aria-hidden="true"></span>
+            <span class="project-tag">Sites</span>
+            <div class="project-info">
+              <h3 class="project-title">
+                <span class="t-a">whosfra.com</span>
+                <span class="t-b" aria-hidden="true">whosfra.com</span>
+              </h3>
+              <p class="project-desc">Portfolio for Francesco Aiena — Italian video editor working in AI, VFX and motion.</p>
+            </div>
+          </div>
+          <a class="card-link" href="https://whosfra.com" target="_blank" rel="noopener noreferrer">
+            <span class="sr-only">View whosfra.com (opens in a new tab)</span>
+          </a>
+        </article>
+
+        <article class="project-card" data-cat="SITES" data-reveal>
+          <div class="tile">
+            <img class="project-img" src="media/images/dissensi.png"
+                 alt="Dissensi Festival website homepage"
+                 width="800" height="500" loading="lazy" decoding="async">
+            <span class="tile-wash" aria-hidden="true"></span>
+            <span class="project-tag">Sites</span>
+            <div class="project-info">
+              <h3 class="project-title">
+                <span class="t-a">dissensifestival.org</span>
+                <span class="t-b" aria-hidden="true">dissensifestival.org</span>
+              </h3>
+              <p class="project-desc">Official website for Dissensi Festival.</p>
+            </div>
+          </div>
+          <a class="card-link" href="https://dissensifestival.org" target="_blank" rel="noopener noreferrer">
+            <span class="sr-only">View dissensifestival.org (opens in a new tab)</span>
+          </a>
+        </article>
+
+        <article class="project-card" data-cat="APPS" data-reveal>
+          <div class="tile">
+            <img class="project-img" src="media/images/mnema.png"
+                 alt="Mnema desktop app — markdown editor beside a document graph"
+                 width="800" height="500" loading="lazy" decoding="async">
+            <span class="tile-wash" aria-hidden="true"></span>
+            <span class="project-tag">Apps</span>
+            <div class="project-info">
+              <h3 class="project-title">
+                <span class="t-a">Mnema</span>
+                <span class="t-b" aria-hidden="true">Mnema</span>
+              </h3>
+              <p class="project-desc">Desktop knowledge management — markdown editor, 2D/3D document graph, LLM integration and versioning.</p>
+            </div>
+          </div>
+          <a class="card-link" href="work/mnema/"><span class="sr-only">Read the Mnema case study</span></a>
+        </article>
+
+        <article class="project-card" data-cat="APPS" data-reveal>
+          <div class="tile">
+            <img class="project-img" src="media/images/margin.png"
+                 alt="Margin app — daily task list interface"
+                 width="800" height="500" loading="lazy" decoding="async">
+            <span class="tile-wash" aria-hidden="true"></span>
+            <span class="project-tag">Apps</span>
+            <div class="project-info">
+              <h3 class="project-title">
+                <span class="t-a">Margin</span>
+                <span class="t-b" aria-hidden="true">Margin</span>
+              </h3>
+              <p class="project-desc">A focused app for daily tasks and to-do management.</p>
+            </div>
+          </div>
+          <a class="card-link" href="work/margin/"><span class="sr-only">Read the Margin case study</span></a>
+        </article>
+
+        <article class="project-card" data-cat="APPS" data-reveal>
+          <div class="tile">
+            <img class="project-img" src="media/images/NBE.png"
+                 alt="Neon Breach Echoes — combat scene from the game"
+                 width="800" height="500" loading="lazy" decoding="async">
+            <span class="tile-wash" aria-hidden="true"></span>
+            <span class="project-tag">Apps</span>
+            <div class="project-info">
+              <h3 class="project-title">
+                <span class="t-a">Neon Breach Echoes</span>
+                <span class="t-b" aria-hidden="true">Neon Breach Echoes</span>
+              </h3>
+              <p class="project-desc">2D/3D action game — weapon-based entity combat across multiple worlds and levels.</p>
+            </div>
+          </div>
+          <a class="card-link" href="work/neon-breach-echoes/"><span class="sr-only">Read the Neon Breach Echoes case study</span></a>
+        </article>
+
+        <p class="empty-state" hidden>No projects in this category yet.</p>
+      </div>
+
+      <p class="sr-only" id="filter-status" role="status" aria-live="polite"></p>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="about-left">
+        <p class="section-label" data-reveal>About</p>
+        <h2 class="about-name" id="about-title" data-slot>
+          <span class="ln"><span>IAM</span></span>
+          <span class="ln"><span><em>Engineer</em></span></span>
+        </h2>
+        <p class="about-bio" data-reveal>
+          I'm an Okta consultant based in Italy. Day to day that means <strong>SSO and
+          provisioning integrations</strong> — SAML, OIDC, SCIM — and the incident work that comes
+          with running identity for large organisations.
+        </p>
+        <p class="about-bio" data-reveal>
+          The rest of the time I build my own things: a desktop knowledge tool in Rust and React,
+          a game, and sites for people I know.
+        </p>
+      </div>
+
+      <!-- The right column used to be one short panel against a much taller left
+           column, which left a wide dead corner. The stack list moved over here: it
+           belongs with the facts, and it balances the two columns. -->
+      <div class="about-right" data-reveal-group>
+        <dl class="about-panel" data-reveal>
+          <div class="stat-row">
+            <dt class="stat-label">Years in identity</dt>
+            <dd class="stat-num" data-count="3" data-suffix="y">3y</dd>
+          </div>
+          <div class="stat-row">
+            <dt class="stat-label">Projects shipped</dt>
+            <dd class="stat-num" data-count="12" data-suffix="+">12+</dd>
+          </div>
+          <div class="stat-row status">
+            <dt class="stat-label"><span class="status-dot" aria-hidden="true"></span>Availability</dt>
+            <dd class="stat-value">Open to freelance</dd>
+          </div>
+        </dl>
+
+        <div class="about-stack" data-reveal>
+          <p class="stack-heading">Stack</p>
+          <ul class="about-tags" aria-label="Technologies">
+            <li class="about-tag">Okta</li>
+            <li class="about-tag">SAML</li>
+            <li class="about-tag">OIDC</li>
+            <li class="about-tag">SCIM</li>
+            <li class="about-tag">JavaScript</li>
+            <li class="about-tag">TypeScript</li>
+            <li class="about-tag">HTML &amp; CSS</li>
+            <li class="about-tag">Node.js</li>
+            <li class="about-tag">Three.js</li>
+            <li class="about-tag">Rust</li>
+            <li class="about-tag">Tauri</li>
+            <li class="about-tag">SQLite</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="contact-inner">
+        <p class="section-label" data-reveal>Contact</p>
+        <h2 class="contact-title" id="contact-title" data-slot>
+          <span class="ln"><span>Get in touch.</span></span>
+        </h2>
+        <p class="contact-sub" data-reveal>LinkedIn is the fastest way to reach me.</p>
+
+        <ul class="contact-list" data-reveal-group>
+          <li data-reveal>
+            <a class="contact-row" href="https://www.linkedin.com/in/cristiano-del-ninno-b3b258297"
+               target="_blank" rel="noopener noreferrer">
+              <span class="cr-wipe" aria-hidden="true"></span>
+              <span class="cr-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                </svg>
+              </span>
+              <span class="cr-label">LinkedIn</span>
+              <span class="cr-handle">cristiano-del-ninno</span>
+              <span class="cr-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </span>
+            </a>
+          </li>
+          <li data-reveal>
+            <a class="contact-row" href="https://github.com/Crissinop"
+               target="_blank" rel="noopener noreferrer">
+              <span class="cr-wipe" aria-hidden="true"></span>
+              <span class="cr-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+              </span>
+              <span class="cr-label">GitHub</span>
+              <span class="cr-handle">Crissinop</span>
+              <span class="cr-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </span>
+            </a>
+          </li>
+          <li data-reveal>
+            <!-- TODO: still points at instagram.com with no handle. Complete the URL
+                 and the handle below, or delete this <li> entirely. -->
+            <a class="contact-row" href="https://instagram.com/"
+               target="_blank" rel="noopener noreferrer">
+              <span class="cr-wipe" aria-hidden="true"></span>
+              <span class="cr-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/>
+                </svg>
+              </span>
+              <span class="cr-label">Instagram</span>
+              <span class="cr-handle">@—</span>
+              <span class="cr-arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-copy">© 2026 Cris Del Ninno · <span>crissinop</span></p>
+  </footer>
 </body>
 </html>
