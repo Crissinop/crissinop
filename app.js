@@ -50,8 +50,7 @@
   /* ---------------------------------------------------------------------------
      2. NAVBAR
      ------------------------------------------------------------------------- */
-  const navbar     = document.getElementById('navbar');
-  const scrollHint = document.querySelector('.scroll-hint');
+  const navbar = document.getElementById('navbar');
 
   if (navbar) {
     let ticking = false;
@@ -60,7 +59,6 @@
       ticking = true;
       requestAnimationFrame(() => {
         navbar.classList.toggle('scrolled', scrollY > 40);
-        if (scrollHint) scrollHint.dataset.hidden = scrollY > 120 ? 'true' : 'false';
         ticking = false;
       });
     };
@@ -319,4 +317,41 @@
     initCursor();
     initDeck();
   }
+
+  /* ---------------------------------------------------------------------------
+     7. MENU CONTESTUALE DISATTIVATO
+     -----------------------------------------------------------------------------
+     Richiesto esplicitamente. Va detto per iscritto cosa costa, perche' non e'
+     ovvio: questo non protegge nulla. Il sorgente resta leggibile da
+     Ctrl+U, dai DevTools, da `curl` e dalla cache del browser; le immagini
+     restano scaricabili dal pannello Network. In cambio si perde "apri in una
+     nuova scheda", "copia indirizzo link" e "salva immagine" — cioe' proprio i
+     gesti di chi il sito lo sta guardando con interesse.
+
+     Mitigazione applicata: la tastiera resta intatta. Il menu contestuale e'
+     raggiungibile anche con il tasto Menu o Shift+F10, e per chi naviga da
+     tastiera e' l'unico modo di aprire un link in una nuova scheda; quelle due
+     scorciatoie restano quindi funzionanti.
+     ------------------------------------------------------------------------- */
+  document.addEventListener('contextmenu', (e) => {
+    if (e.button === -1) return;          // invocato da tastiera: lo lasciamo passare
+    e.preventDefault();
+  });
+
+  /* ---------------------------------------------------------------------------
+     8. FIRMA IN CONSOLE
+     -----------------------------------------------------------------------------
+     Chi apre i DevTools su un portfolio e' quasi sempre un altro sviluppatore o
+     qualcuno che sta valutando come lavori. Costa due righe e non occupa un
+     pixel di interfaccia.
+     ------------------------------------------------------------------------- */
+  console.log(
+    '%cCRISSINOP',
+    'font:700 34px/1 "Space Grotesk",system-ui,sans-serif;color:#00d4ff;text-shadow:2px 2px 0 #005c76'
+  );
+  console.log(
+    '%cScritto a mano. Nessun framework, nessuna dipendenza di terze parti.\n' +
+    'github.com/Crissinop',
+    'font:12px/1.7 ui-monospace,monospace;color:#7a828f'
+  );
 })();

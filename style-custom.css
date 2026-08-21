@@ -75,6 +75,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: clip;
   text-rendering: optimizeLegibility;
+  /* Coppia lato CSS del blocco del menu contestuale: su iOS il long-press
+     apre comunque il callout nativo, e preventDefault() da solo non basta. */
+  -webkit-touch-callout: none;
 }
 
 img, svg { display: block; max-width: 100%; }
@@ -83,7 +86,7 @@ button { font: inherit; color: inherit; background: none; border: none; }
 ul { list-style: none; }
 :where(p) { text-wrap: pretty; }
 
-.section-label, .hero-pill, .filter-btn, .footer-copy,
+.section-label, .filter-btn, .footer-copy,
 .stat-num, .stat-label, .project-tag,
 .proj-eyebrow, .doc-label, .meta-k, .stack-pill, .cr-handle, .masthead {
   -webkit-user-select: none;
@@ -320,7 +323,7 @@ body::before {
   text-align: center;
   /* Deliberately tight side padding: the masthead is meant to run near full
      bleed, and every reclaimed pixel becomes type size. */
-  padding: calc(var(--nav-h) + 1.5rem) clamp(0.9rem, 3vw, 2.5rem) 5rem;
+  padding: calc(var(--nav-h) + 1.5rem) clamp(0.9rem, 3vw, 2.5rem) clamp(6rem, 12vw, 8rem);
   overflow: hidden;
 }
 .hero-bg-glow {
@@ -434,86 +437,130 @@ body::before {
 }
 .hero-role span { color: var(--accent); }
 
-.hero-pills {
+/* ---- Riga del ruolo: fuori asse -------------------------------------------
+   Il masthead resta l'ancora simmetrica; questa riga la contraddice. Blocco
+   spinto a destra, testo allineato a sinistra contro un filetto ciano: la
+   composizione acquista una diagonale invece di sedersi sull'asse centrale.
+   --------------------------------------------------------------------------- */
+.hero-role {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
   justify-content: center;
-  margin-bottom: 2.25rem;
+  margin-top: clamp(0.75rem, 2.5vw, 2rem);
 }
-.hero-pill {
-  font-family: var(--font-mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  padding: 0.5rem 1.15rem;
-  border: 1px solid var(--border-soft);
-  border-radius: 100px;
-  color: var(--muted);
-  transition: color var(--dur-hover) ease, border-color var(--dur-hover) ease;
+/* Partenza dal centro con uno scarto verso destra, invece dell'allineamento a
+   filo del bordo: il blocco resta fuori asse ma dentro la composizione, e non
+   si stacca dal masthead. */
+.role-line {
+  margin-left: clamp(0rem, 15vw, 17rem);
+  text-align: left;
+  padding-left: clamp(0.95rem, 2vw, 1.5rem);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 4.4vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  color: #fff;
 }
-@media (hover: hover) and (pointer: fine) {
-  .hero-pill:hover { color: var(--accent); border-color: var(--neon-mid); }
+/* Il filetto e' un pseudo-elemento, non un border: cosi' puo' sfumare verso il
+   basso invece di chiudere il blocco con un taglio netto. */
+.role-line::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.1em; bottom: 0.22em;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--accent), rgba(0, 212, 255, 0.12));
+}
+.role-line { position: relative; }
+.role-line em { font-style: normal; color: var(--accent); font-weight: 400; }
+/* Seconda riga in contorno: stesso trattamento del layer di profondita' del
+   masthead, cosi' la gerarchia si legge senza cambiare corpo. */
+.role-line b {
+  font-weight: 700;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
 }
 
-.explore-btn {
-  display: inline-flex;
+/* Sotto i 760 px non c'e' larghezza per leggere la diagonale: il blocco torna a
+   sinistra, dove l'occhio lo trova comunque. */
+@media (max-width: 760px) {
+  .hero-role { justify-content: flex-start; }
+  .role-line { margin-left: 0.25rem; }
+  /* Il contorno a 1 px sparisce sotto una certa dimensione: torna pieno. */
+  .role-line b { color: rgba(255, 255, 255, 0.72); -webkit-text-stroke: 0; }
+}
+
+/* ---- Rail inferiore ------------------------------------------------------- */
+.hero-foot {
+  position: absolute;
+  left: 0; right: 0;
+  bottom: clamp(1.1rem, 3vw, 2.25rem);
+  z-index: 2;
+  display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  padding: 0.9rem 2.2rem;
-  border: 1px solid var(--neon-mid);
-  border-radius: 100px;
-  color: #fff;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-inline: clamp(1rem, 4vw, 3rem);
+}
+
+.hero-social { display: flex; gap: 0.6rem; }
+.hs-link {
+  position: relative;
+  width: 46px; height: 46px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border-soft);
+  border-radius: 13px;
+  color: var(--muted);
   text-decoration: none;
-  background: rgba(0, 212, 255, 0.05);
-  transition: background var(--dur-hover) ease,
+  transition: color var(--dur-hover) ease,
               border-color var(--dur-hover) ease,
               transform var(--dur-press) var(--ease-out);
 }
-.explore-btn svg { width: 13px; height: 13px; transition: transform var(--dur-ui) var(--ease-out); }
+.hs-link svg { width: 19px; height: 19px; }
 @media (hover: hover) and (pointer: fine) {
-  .explore-btn:hover { background: rgba(0, 212, 255, 0.12); border-color: var(--accent); }
-  .explore-btn:hover svg { transform: translateY(3px); }
+  .hs-link:hover { color: var(--accent); border-color: var(--neon-mid); transform: translateY(-3px); }
 }
-.explore-btn:active { transform: scale(0.97); }
+.hs-link:active { transform: scale(0.94); }
 
-.scroll-hint {
-  position: absolute;
-  left: 50%; bottom: 1.5rem;
-  translate: -50% 0;                /* not transform: the entrance keyframe owns it */
-  display: flex;
-  flex-direction: column;
+/* ---- Segno di scorrimento --------------------------------------------------
+   Un filo verticale che si materializza scendendo e un chevron. Niente cerchio,
+   niente etichetta, niente animazione perpetua: la direzione e' l'unica
+   informazione, e la porta la forma.
+   --------------------------------------------------------------------------- */
+.explore-btn {
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
+  justify-content: center;
+  width: 44px;                     /* area di tocco, non dimensione del segno */
+  height: 64px;
   color: var(--muted);
-  transition: opacity var(--dur-ui) var(--ease-out);
+  text-decoration: none;
+  transition: color var(--dur-ui) ease;
 }
-.scroll-hint[data-hidden="true"] { opacity: 0; }
-.scroll-line { width: 1px; height: 30px; background: linear-gradient(to bottom, var(--accent), transparent); }
+.explore-btn svg {
+  width: 16px; height: 56px;
+  overflow: visible;
+  transition: transform 420ms var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .explore-btn:hover { color: var(--accent); }
+  .explore-btn:hover svg { transform: translateY(7px); }
+}
+.explore-btn:active svg { transform: translateY(3px); }
+
+@media (max-width: 520px) {
+  .hs-link { width: 42px; height: 42px; }
+  .explore-btn { height: 52px; }
+  .explore-btn svg { height: 44px; }
+}
 
 @media (prefers-reduced-motion: no-preference) {
-  .scroll-line { animation: scroll-line 2.2s var(--ease-in-out) infinite; transform-origin: top center; }
-  @keyframes scroll-line {
-    0%        { transform: scaleY(0); transform-origin: top center; }
-    45%       { transform: scaleY(1); transform-origin: top center; }
-    45.01%    { transform: scaleY(1); transform-origin: bottom center; }
-    90%, 100% { transform: scaleY(0); transform-origin: bottom center; }
-  }
-  .hero-role, .hero-pills, .explore-btn, .scroll-hint {
-    animation: rise 620ms var(--ease-out) both;
-  }
-  .hero-role   { animation-delay: 780ms; }
-  .hero-pills  { animation-delay: 860ms; }
-  .explore-btn { animation-delay: 940ms; }
-  .scroll-hint { animation-delay: 1080ms; }
+  .hero-foot { animation: rise 620ms var(--ease-out) both; animation-delay: 940ms; }
+
+  /* Il masthead arriva dalla profondita'; il ruolo sale da una feritoia. Due
+     movimenti diversi per due voci diverse della stessa composizione. */
+  .role-line .ln:nth-child(1) > span { --slot-delay: 780ms; }
+  .role-line .ln:nth-child(2) > span { --slot-delay: 860ms; }
 }
 @keyframes rise { from { opacity: 0; transform: translate3d(0, 22px, 0); } }
 
@@ -917,6 +964,7 @@ body::before {
   .project-card:hover .tile, .project-card:active .tile,
   .contact-row:active, .explore-btn:active, .filter-btn:active { transform: none !important; }
   .project-title .t-b { display: none; }
+  .role-line b { color: rgba(255, 255, 255, 0.72); -webkit-text-stroke: 0; }
 }
 
 @media (prefers-reduced-transparency: reduce) {

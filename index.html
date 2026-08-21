@@ -15,14 +15,14 @@
   <meta property="og:site_name" content="Crissinop">
   <meta property="og:title" content="Crissinop — Cris Del Ninno">
   <meta property="og:description" content="Okta / IAM consultant and web developer, based in Italy.">
-  <meta property="og:url" content="https://delninno.com/">
-  <meta property="og:image" content="https://delninno.com/media/images/og.png">
+  <meta property="og:url" content="https://crissinop.space/">
+  <meta property="og:image" content="https://crissinop.space/media/images/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Crissinop — Cris Del Ninno">
   <meta name="twitter:description" content="Okta / IAM consultant and web developer, based in Italy.">
-  <meta name="twitter:image" content="https://delninno.com/media/images/og.png">
+  <meta name="twitter:image" content="https://crissinop.space/media/images/og.png">
 
   <link rel="icon" href="media/images/favicon.ico" sizes="32x32">
   <link rel="icon" href="media/images/favicon.svg" type="image/svg+xml">
@@ -53,7 +53,7 @@
     "name": "Cristiano Del Ninno",
     "alternateName": ["Cris Del Ninno", "Crissinop"],
     "jobTitle": "IAM Consultant",
-    "url": "https://delninno.com/",
+    "url": "https://crissinop.space/",
     "address": { "@type": "PostalAddress", "addressCountry": "IT" },
     "sameAs": [
       "https://github.com/Crissinop",
@@ -118,26 +118,79 @@
           </span>
         </h1>
 
-        <p class="hero-role">IAM Engineer <span>&amp;</span> Web Developer</p>
-
-        <ul class="hero-pills" aria-label="Specializations">
-          <li class="hero-pill">Sites</li>
-          <li class="hero-pill">Apps</li>
-          <li class="hero-pill">IAM</li>
-          <li class="hero-pill">Web Dev</li>
-        </ul>
-
-        <a href="#work" class="explore-btn">
-          Explore
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
-            <path d="M12 5v14M19 12l-7 7-7-7"/>
-          </svg>
-        </a>
+        <!--
+          Il ruolo esce dall'asse centrale. Il masthead resta l'ancora simmetrica,
+          questa riga rompe la simmetria: blocco allineato a destra, testo
+          allineato a sinistra contro un filetto ciano, come un richiamo
+          editoriale. Due voci diverse nella stessa composizione.
+        -->
+        <div class="hero-role">
+          <!-- Due trattamenti, non due righe uguali: la prima piena, la seconda
+               in contorno, come il layer di profondita' del masthead. La
+               congiunzione resta l'unico accento cromatico. -->
+          <p class="role-line" data-slot>
+            <span class="ln"><span>IAM Engineer</span></span>
+            <span class="ln"><span><em>&amp;</em> <b>Web Developer</b></span></span>
+          </p>
+        </div>
       </div>
 
-      <div class="scroll-hint" aria-hidden="true">
-        <span class="scroll-line"></span>
-        <span>Scroll</span>
+      <!--
+        Rail inferiore: social a sinistra, unico invito ad avanzare a destra.
+        Via le pill delle specializzazioni (l'informazione e' gia' nella riga del
+        ruolo e nei filtri di Work) e via l'indicatore "Scroll": due inviti a
+        scorrere che dicevano la stessa cosa a due centimetri l'uno dall'altro.
+      -->
+      <div class="hero-foot">
+        <ul class="hero-social" aria-label="Profiles">
+          <li>
+            <a class="hs-link" href="https://www.linkedin.com/in/cristiano-del-ninno-b3b258297"
+               target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a class="hs-link" href="https://github.com/Crissinop"
+               target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <!-- TODO: URL e handle Instagram ancora da completare -->
+            <a class="hs-link" href="https://instagram.com/"
+               target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+
+        <!--
+          Nessuna etichetta. Un filo verticale da 1 px che si materializza
+          scendendo, e un chevron: la direzione e' l'unica cosa da dire, e la
+          dice la forma. Il cerchio con l'icona dentro era vestiario da libreria
+          di icone, non un segno disegnato per questa pagina.
+        -->
+        <a href="#work" class="explore-btn" aria-label="Go to selected work">
+          <svg viewBox="0 0 16 56" fill="none" stroke="currentColor" stroke-width="1"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <defs>
+              <linearGradient id="scroll-fade" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0"   stop-color="currentColor" stop-opacity="0"/>
+                <stop offset=".62" stop-color="currentColor" stop-opacity="1"/>
+              </linearGradient>
+            </defs>
+            <path d="M8 1v46" stroke="url(#scroll-fade)"/>
+            <path d="M2.5 41.5 8 47l5.5-5.5"/>
+          </svg>
+        </a>
       </div>
     </section>
 
