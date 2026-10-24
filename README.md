@@ -1,6 +1,6 @@
 # Hey, I'm Crissinop!
 
-Currently computer engineering student, currently working as an **IAM Engineer** while building projects across web development, control systems, and graphics.
+Currently computer engineering student and working as an **IAM Engineer** while building projects across web development, control systems, and graphics.
 
 ---
 
