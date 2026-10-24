@@ -1,6 +1,6 @@
 # Hey, I'm Crissinop!
 
-Engineering student at Politecnico di Bari, currently working in **IAM (Identity & Access Management)** while building projects across web development, control systems, and graphics.
+Currently computer engineering student, currently working as an **IAM Engineer** while building projects across web development, control systems, and graphics.
 
 ---
 
