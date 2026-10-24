@@ -1,73 +1,27 @@
-# Cris Del Ninno — Portfolio 2026
+# Hey, I'm Crissinop!
 
-Cyberpunk-minimal portfolio. Dark theme, GSAP animations, neon accents.
+Engineering student at Politecnico di Bari, currently working in **IAM (Identity & Access Management)** while building projects across web development, control systems, and graphics.
 
-## Stack
-- HTML5 + Tailwind CSS 3.4 (CDN, JIT)
-- GSAP 3.12 + ScrollTrigger
-- Vanilla JS (zero framework overhead)
-- Google Fonts: Space Grotesk + DM Mono
+---
 
-## File Structure
-```
-index.html          ← Main page
-style-custom.css    ← Neon vars, layout, animations CSS
-gsap-animations.js  ← GSAP ScrollTrigger, hero parallax, stagger reveals
-projects.js         ← 12 project entries (cat/img/title/desc/url)
-README.md
-```
+### What I Do
 
-## Deploy
+- 🔐 **IAM & Security:** Access management, identity workflows, and infrastructure setup.
+- ⚙️ **Engineering & Systems:** Control theory, circuit analysis, MATLAB simulations, and relational database design.
+- 🌐 **Web & Creative:** Front-end development (Tailwind CSS, GSAP), UI design, and 3D graphics/media production.
 
-### Vercel
-```bash
-npx vercel --prod
-```
+---
 
-### Netlify
-Drag-and-drop the folder at app.netlify.com/drop
+### Tech Stack & Tools
 
-### GitHub Pages
-Push to `main`, enable Pages from Settings → Pages → Deploy from branch.
+- **Identity & Security:** IAM Frameworks, Directory Services, Access Policies
+- **Languages & Web:** JavaScript, HTML5/CSS3, SQL, C/C++
+- **Engineering & Math:** MATLAB, Simulink, LaTeX
+- **Design & Media:** Photoshop, Blender, Premiere Pro / DaVinci Resolve
 
-## Customize
+---
 
-### Add/Edit projects
-Edit `projects.js` — each object:
-```js
-{
-  id: 1,
-  cat: 'VIDEO',          // VIDEO | AI | VFX | MOTION
-  img: 'https://...',    // 800px wide, 16:9
-  title: 'Project Name',
-  desc: 'Short description',
-  url: 'https://...'
-}
-```
+### GitHub Stats
 
-### Colors
-In `style-custom.css`, edit `:root`:
-```css
---neon: #00d4ff;   /* Main accent */
-```
-
-### Name / Bio
-In `index.html` search for "Cris Del Ninno" and "about-bio".
-
-### Social links
-In `index.html` `#contact` section — update `href` attributes.
-
-### Email
-Update `href="mailto:cris@delninno.com"` and the visible text.
-
-## Performance targets
-- LCP: < 1s (fonts preloaded, images lazy)
-- Lighthouse: 95+ Performance, 100 Accessibility
-- Bundle: < 50KB HTML+CSS+JS (excluding CDN GSAP ~80KB gzipped)
-
-## Accessibility
-- ARIA live region on projects grid
-- ARIA pressed state on filter buttons
-- Keyboard navigable (tab order preserved)
-- `@prefers-reduced-motion` disables all animations & custom cursor
-- Semantic HTML5 landmarks (nav, main, section, article)
+![Stats](https://github-readme-stats.vercel.app/api?username=crissinop&show_icons=true&theme=dark)
+![Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=crissinop&layout=compact&theme=dark)
