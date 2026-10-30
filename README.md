@@ -24,6 +24,8 @@ Currently computer engineering student and working as an **IAM Engineer** while 
 ### GitHub Stats
 
 <div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=crissinop&show_icons=true&theme=dark&hide_border=true&hide=stars,prs,issues,contribs" alt="GitHub Stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=crissinop&layout=compact&theme=dark&hide_border=true" alt="Languages" />
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=crissinop&show_icons=true&theme=dark&hide_border=true&hide=stars,prs,issues,contribs)
+![Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=crissinop&layout=compact&theme=dark&hide_border=true)
+
 </div>
