@@ -24,6 +24,8 @@ Currently computer engineering student and working as an **IAM Engineer** while 
 ### GitHub Stats
 
 <div align="center">
+  
 ![GitHub Stats](./profile/stats.svg)
 ![Languages](./profile/top-langs.svg)
+
 </div>
