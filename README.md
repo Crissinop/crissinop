@@ -4,7 +4,7 @@ Currently computer engineering student and working as an **IAM Engineer** while 
 
 ---
 
-### What I Do
+### Current Activities
 
 - 🔐 **IAM & Security:** Access management, identity workflows, and infrastructure setup.
 - ⚙️ **Engineering & Systems:** Control theory, circuit analysis, MATLAB simulations, and relational database design.
@@ -12,7 +12,7 @@ Currently computer engineering student and working as an **IAM Engineer** while 
 
 ---
 
-### Tech Stack & Tools
+### Stack & Tools
 
 - **Identity & Security:** IAM Frameworks, Directory Services, Access Policies
 - **Languages & Web:** JavaScript, HTML5/CSS3, SQL, C/C++
